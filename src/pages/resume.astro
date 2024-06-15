@@ -1,0 +1,104 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import Section from "@/components/Section.astro";
+import Hero from "@/components/resume/Hero.astro";
+import About from "@/components/resume/About.astro";
+import Education from "@/components/resume/Education.astro";
+import Skills from "@/components/resume/Skills.astro";
+import Projects from "@/components/resume/Projects.astro";
+import Experience from "@/components/resume/Experience.astro";
+import Certificates from "@/components/resume/Certificates.astro";
+import KeyboardManager from "@/components/KeyboardManager.astro";
+
+import { basics } from "@cv";
+const { name, label } = basics;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead
+      title={`Curriculum Vitae de ${name} - ${label}`}
+      description={label}
+    />
+  </head>
+  <body>
+    <main>
+      <Section>
+        <Hero />
+        <About />
+        <Experience />
+        <Education />
+        <Projects />
+        <Skills />
+        <Certificates />
+      </Section>
+    </main>
+    <KeyboardManager />
+  </body>
+  
+  <style>
+    /* CSS RESET */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+    }
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+    p {
+      text-wrap: pretty;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-wrap: balance;
+    }
+    img,
+    video,
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+      }
+    }
+    
+    /*  BASE STYLES   */
+    main {
+      margin: 64px 0;
+      /* padding: 4rem;
+    margin: auto;
+    width: 100%; */
+    }
+
+    @media (width <= 700px) {
+      main {
+        margin: 32px 0;
+        /* padding: 2rem; */
+      }
+    }
+  </style>
+</html>

@@ -1,0 +1,158 @@
+---
+import Section from "../Section.astro";
+import News2 from "@/icons/News2.astro";
+import News from "@/icons/News.astro";
+import RightArrow from "@/icons/RightArrow.astro";
+import Filetextfill from "@/icons/Filetextfill.astro";
+
+import {
+  Rss,
+  X,
+  Linkedin,
+  Threads,
+  Facebook,
+  Instagram,
+} from "simple-icons-astro";
+
+import { posteos } from "@social";
+
+const SOCIAL_ICONS: Record<string, any> = {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Threads,
+  X,
+  News,
+};
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+
+---
+
+<Section>
+  <h2 class="section-title flex items-center gap-1">
+    <News2 />Social Media Posts
+  </h2>
+
+  <article class="suscribe-container">
+    <p>
+      Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
+      de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
+    </p>
+
+    <!-- <div class="box-left">
+      <a href="#" class="rss-btn">
+        <Rss class="h-3 w-3" />
+        <span>Suscríbete</span>
+      </a>
+    </div> -->
+  </article>
+
+  <ul>
+    {
+      posteos.map(({ network, title, description, url }) => {
+        const Icon = SOCIAL_ICONS[network];
+
+        return (
+          <li>
+            <article>
+              <header>
+                <Icon class="w-4 h-4" />
+                <h3 class="truncate">
+                  <a
+                    href={url}
+                    title={`Ver el proyecto ${title}`}
+                    target="_blank"
+                  >
+                    {title}
+                  </a>
+                </h3>
+              </header>
+              <p class="line-clamp-2">{description}</p>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+  li article,
+  .items {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(30, 37, 44, 0.08);
+
+    transition: all 0.2s ease-in-out;
+    /* background-color: rgb(30, 37, 44, 0.03); */
+  }
+  li article:hover,
+  .items:hover {
+    background-color: rgb(30, 37, 44, 0.08);
+  }
+  li article header {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  li article header a {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(30, 37, 44, 0.9);
+    inset: 0;
+    width: auto;
+  }
+  li article header a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  li article p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgb(30, 37, 44, 0.65);
+    text-wrap: pretty;
+  }
+  .items a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .items a h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(30, 37, 44, 0.85);
+  }
+  .items a h3:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .items p {
+    font-size: 12px;
+    color: rgb(30, 37, 44, 0.65);
+    text-wrap: pretty;
+  }
+
+  @media (width <= 700px) {
+    /* ul {
+      flex-direction: row;
+      justify-content: center;
+    }
+    li {
+      width: 300px;
+      height: 66px;
+    } */
+  }
+</style>

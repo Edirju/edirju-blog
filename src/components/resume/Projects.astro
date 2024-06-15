@@ -1,0 +1,136 @@
+---
+import Section from "../Section.astro";
+import { Github } from "simple-icons-astro";
+import { projects } from "@cv";
+---
+
+<Section title="Proyectos">
+  <ul class="projects-items">
+    {
+      projects.map(
+        ({ url, description, highlights, name, isActive, github }) => {
+          return (
+            <li class="items">
+              <article class="item">
+                <header>
+                  <h3>
+                    <a
+                      href={url}
+                      title={`Ver el proyecto ${name}`}
+                      target="_blank"
+                    >
+                      {name}
+                    </a>
+                    {isActive && <span>•</span>}
+                    {github && (
+                      <a
+                        class="github-code-link"
+                        href={github}
+                        target="_blank"
+                        title={`Ver código fuente del proyecto ${name}`}
+                      >
+                        <Github class="w-4 h-4" />
+                      </a>
+                    )}
+                  </h3>
+                  <p>{description}</p>
+                </header>
+                <footer>
+                  <ul>
+                    {highlights.map((highlight) => {
+                      return <span>{highlight}</span>;
+                    })}
+                  </ul>
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      )
+    }
+  </ul>
+</Section>
+
+<style>
+  .projects-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-inline: -8px;
+  }
+
+  .items {
+    overflow: hidden;
+    border: 1px solid rgb(22, 20, 20, 0.1);
+    border-radius: 10px;
+    padding: 8px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    height: 100%;
+  }
+
+  .item header h3 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .item header h3 a {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+    color: rgb(22, 20, 20, 0.9);
+    text-wrap: pretty;
+  }
+
+  .item header h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .item header h3 span {
+    color: rgb(0, 188, 47, 1);
+  }
+
+  .item header p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgb(22, 20, 20, 0.65);
+    text-wrap: pretty;
+  }
+
+  .item footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .item footer ul span {
+    font-size: 10px;
+    color: rgb(22, 20, 20, 0.5);
+    background: rgb(22, 20, 20, 0.08);
+    padding: 1px 3px;
+    border-radius: 4px;
+    width: fit-content;
+  }
+
+  .github-code-link {
+    margin-left: 0.3125rem;
+  }
+
+  @media (width <= 700px) {
+    .projects-items {
+      margin-inline: 0px;
+      box-shadow: 0 1px 1px rgb(242, 242, 242, 0.35);
+    }
+
+    .item {
+      border: none;
+      padding: 0 0 16px 0;
+    }
+  }
+</style>

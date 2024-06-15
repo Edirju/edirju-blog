@@ -1,0 +1,187 @@
+---
+import Section from "../Section.astro";
+
+import { basics } from "@landing";
+const { name, label, image, location, profiles, phone, email } = basics;
+const { city, region } = location;
+
+import { Github, Linkedin, X, Instagram, Threads } from "simple-icons-astro";
+import WorldMap from "@/icons/WorldMap.astro";
+import Mail from "@/icons/Mail.astro";
+import Phone from "@/icons/Phone.astro";
+
+const SOCIAL_ICONS: Record<string, any> = {
+  Github,
+  Linkedin,
+  X,
+  Instagram,
+  Threads,
+};
+
+const linkedInfo = profiles.find(({ network }) => network === "Linkedin");
+const linkedUrl = linkedInfo?.url;
+const XInfo = profiles.find(({ network }) => network === "X");
+const XUrl = XInfo?.url;
+const instagramInfo = profiles.find(({ network }) => network === "Instagram");
+const instagramUrl = instagramInfo?.url;
+const githubInfo = profiles.find(({ network }) => network === "Github");
+const githubUrl = githubInfo?.url;
+const threadsInfo = profiles.find(({ network }) => network === "Threads");
+const threadsUrl = threadsInfo?.url;
+
+const printInfo = [
+  email,
+  phone,
+  linkedUrl,
+  githubUrl,
+  XUrl,
+  instagramUrl,
+  threadsUrl,
+]
+  .filter(Boolean)
+  .join(" • ");
+---
+
+<Section>
+  <article
+    class="hero-section max-w-[700px] flex flex-row items-center justify-between mx-auto mb-0 mt-4"
+  >
+    <div class="hero-info flex flex-col gap-4">
+      <h1 class="text-4xl font-black tracking-tighter text-pretty">
+        Hola! Soy Edinson Rivera.
+      </h1>
+
+      <h2 class="text-base font-light text-balance">
+        {label}
+      </h2>
+
+      <span class="flex items-center gap-1 text-sm">
+        <WorldMap />
+        {city}, {region}
+      </span>
+
+      <footer class="print">
+        {printInfo}
+      </footer>
+
+      <footer class="no-print">
+        {
+          email && (
+            <a
+              href={`mailto:${email}`}
+              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail />
+            </a>
+          )
+        }
+        {
+          phone && (
+            <a
+              href={`Tel:${phone}`}
+              title={`Llamar por teléfono a ${name} al número ${phone}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Phone />
+            </a>
+          )
+        }
+        {
+          profiles.map(({ network, url, username }) => {
+            const Icon = SOCIAL_ICONS[network];
+            if (!Icon) {
+              console.error(`Icono no encontrado para la red: ${network}`);
+              return null;
+            }
+            return (
+              <a
+                href={url}
+                title={`Visitar el perfil de ${name} en ${network}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon class="w-4 h-4" />
+              </a>
+            );
+          })
+        }
+      </footer>
+    </div>
+
+    <figure class="hero-image">
+      <img src={image} alt={name} />
+    </figure>
+  </article>
+</Section>
+
+<style>
+  .hero-info span {
+    color: rgb(30, 37, 44, 0.45);
+  }
+
+  .hero-image img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 330px;
+  }
+
+  footer {
+    display: flex;
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  footer a {
+    color: rgb(30, 37, 44, 0.55);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(30, 37, 44, 0.08);
+    border-radius: 6px;
+    padding: 4px;
+    height: 32px;
+    width: 32px;
+
+    transition: all 0.2s ease;
+  }
+
+  footer a:hover {
+    background-color: rgb(30, 37, 44, 0.08);
+    border: 1px solid rgb(30, 37, 44, 0.08);
+    color: rgb(30, 37, 44, 1);
+  }
+
+  @media (width <= 700px) {
+    .hero-section {
+      flex-direction: column-reverse;
+    }
+
+    .hero-info {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-info h1 {
+      font-size: 32px;
+    }
+
+    .hero-info h2 {
+      text-wrap: balance;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .hero-image img {
+      width: 100%;
+    }
+  }
+</style>

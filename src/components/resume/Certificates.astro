@@ -1,0 +1,32 @@
+---
+import Section from "../Section.astro";
+import { certificates } from "@cv";
+---
+
+<Section title="Certificaciones">
+  <ul>    
+    {
+      certificates.map(({ name, date, issuer, url }) => {
+        const startYear = new Date(date).getFullYear();
+
+        return (
+          <li class=" text-[10px] bg-[rgba(30,37,44,0.05)] text-[rgba(30,37,44,.9)] px-2 py-1.5 transition duration-300 ease-in-out hover:bg-[rgba(30,37,44,.8)] hover:text-[rgba(255,253,248,.9)]">            
+            <a href={url} target="_blank" class="hover:underline-offset-4 hover:underline">
+              <span class="mr-1 font-medium">{name}</span>
+            </a>
+            <span class="mr-1 italic text-[9px] uppercase">{issuer}</span>
+            <span class="text-[10px] font-regular">{startYear} </span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+</style>

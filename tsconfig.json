@@ -1,6 +1,15 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strictNullChecks": true
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@cv": ["./cv.json"],
+      "@landing": ["./landing.json"],
+      "@social": ["./social-rss.json"]
+    },
+    "strictNullChecks": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }

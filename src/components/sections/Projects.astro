@@ -1,0 +1,165 @@
+---
+import Section from "../Section.astro";
+import { basics, projects } from "@cv";
+
+import {
+  Rss,
+  Github,
+  Html5,
+  Css3,
+  React,
+  Javascript,
+  Python,
+  Vite,
+} from "simple-icons-astro";
+import Circle from "@/icons/circle.astro";
+import AstroIcon from "@/icons/AstroIcon.astro";
+import Data from "@/icons/Data.astro";
+
+const SKILL_ICONS: Record<string, any> = {
+  Html5,
+  Css3,
+  React,
+  Javascript,
+  AstroIcon,
+  Vite,
+};
+---
+
+<Section id="proyectos1">
+  <article class="suscribe-container mt-6">
+    <p>
+      Los pequeños detalles marcan una gran diferencia. Con los años he
+      aprendido a fijarme en esos detalles. Nunca dejo de aprender. He aquí
+      varias recopilaciones a lo largo de este camino.
+    </p>
+    <!-- <div class="box-left">
+      <a href="#" class="rss-btn">
+        <Rss class="h-3 w-3" />
+         <span>Suscríbete</span> 
+      </a>
+    </div> -->
+  </article>
+
+  <ul class="projects-items">
+    {
+      projects.map(
+        ({ url, description, highlights, name, isActive, github }) => {
+          return (
+            <li class="items">
+              <article class="item">
+                <header>
+                  <h3 class="">
+                    <a
+                      href={url}
+                      title={`Ver el proyecto ${name}`}
+                      target="_blank"
+                    >
+                      {name}
+                    </a>
+                    {isActive && (
+                      <span>
+                        <Circle />
+                      </span>
+                    )}
+                    {github && (
+                      <a
+                        class="github-code-link"
+                        href={github}
+                        target="_blank"
+                        title={`Ver código fuente del proyecto ${name}`}
+                      >
+                        <Github class="w-4 h-4" />
+                      </a>
+                    )}
+                  </h3>
+                  <p class=" line-clamp-2">{description}</p>
+                </header>
+                <footer>
+                  <ul>
+                    {highlights.map((highlight) => {
+                      return <span>{highlight}</span>;
+                    })}
+                  </ul>
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      )
+    }
+  </ul>
+</Section>
+
+<style>
+  .projects-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    /* border: 1px solid rgb(30, 37, 44, 0.025); */
+    /* background-color: rgb(30, 37, 44, 0.025); */
+    border-radius: 0.5rem;
+    padding: 0px 8px;
+  }
+  .items {
+    overflow: hidden;
+    background-color: rgb(var(--clr-light));
+    border: 1px solid rgb(30, 37, 44, 0.08);
+    border-radius: 0.5rem;
+    padding: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
+  .items:hover {
+    background-color: rgb(var(--clr-blue-55), .65 );
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    height: 100%;
+  }
+  .item header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .item header h3 a {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+    text-wrap: pretty;
+    color: rgb(30, 37, 44, 0.9);
+  }
+  .item header h3 a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .item header h3 span {
+    color: rgb(0, 188, 47, 1);
+  }
+  .item header p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgb(30, 37, 44, 0.65);
+    text-wrap: pretty;
+  }
+  .item footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .item footer ul span {
+    font-size: 10px;
+    color: rgb(30, 37, 44, 0.5);
+    background: rgb(var(--clr-dark), .1);
+    padding: 1px 3px;
+    border-radius: 4px;
+    width: fit-content;
+  }
+  .github-code-link {
+    color: rgb(30, 37, 44, 0.55);
+    margin-left: 8px;
+  }
+</style>
