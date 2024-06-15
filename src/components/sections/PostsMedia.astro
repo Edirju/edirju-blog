@@ -23,6 +23,7 @@ const SOCIAL_ICONS: Record<string, any> = {
   Threads,
   X,
   News,
+  Rss,
 };
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
@@ -32,16 +33,12 @@ import FormattedDate from "../FormattedDate.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-
-
 ---
 
 <Section>
   <h2 class="section-title flex items-center gap-1">
-    <News2 />Social Media Posts
+    <Rss class="w-4 h-4" />Social Media Posts
   </h2>
-
-  
 
   <ul>
     {
@@ -78,18 +75,21 @@ const posts = (await getCollection("blog")).sort(
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 0.5rem;
   }
-  li article,
-  .items {
+  li article {
     padding: 0.5rem;
     border-radius: 0.5rem;
-    border: 1px solid rgb(30, 37, 44, 0.08);
-
-    transition: all 0.2s ease-in-out;
+    /* border: 1px solid rgb(30, 37, 44, 0.08); */
+    border: 1px solid rgb(var(--clr-dark), 0.1);
+    /* box-shadow: 0.1em 0.1em rgb(var(--clr-dark), 0.65); */
     /* background-color: rgb(30, 37, 44, 0.03); */
+    transition: all 0.2s ease-in-out;
   }
-  li article:hover,
-  .items:hover {
-    background-color: rgb(30, 37, 44, 0.08);
+  li article:hover {
+    background-color: rgb(var(--clr-light));
+    border: 1px solid rgb(var(--clr-dark), 0.05);
+    box-shadow:
+      4px 4px 8px rgb(var(--clr-dark), 0.05),
+      -4px -4px 8px rgb(var(--clr-dark), 0.05);
   }
   li article header {
     display: flex;
