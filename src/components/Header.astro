@@ -15,7 +15,7 @@ import { SITE_TITLE } from "../consts";
 
 <header class="mb-[72px] py-0 px-4">
   <nav class="flex items-center justify-between">
-    <h2 class="font-black text-2xl">
+    <h2 class="font-black text-2xl text-[rgba(30,37,44,0.85)]">
       <a href="/" class="flex items-center gap-2">
         <Logo />
         <span>Ediriv.</span>
@@ -26,8 +26,7 @@ import { SITE_TITLE } from "../consts";
       <HeaderLink href="/">Inicio</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/projects">Proyectos</HeaderLink>
-      <HeaderLink href="/resume" target="_blank">Resume</HeaderLink
-      >
+      <!-- <HeaderLink href="/resume" target="_blank">Resume</HeaderLink> -->
     </div>
 
     <div class="social-links flex items-center">
@@ -130,6 +129,10 @@ import { SITE_TITLE } from "../consts";
   nav a.active {
     text-decoration: none;
     border-bottom-color: var(--accent);
+    
+  }  
+  .social-links a {
+    color: rgb(var(--clr-dark), 0.85)
   }
 
   @media (width <= 700px) {
@@ -137,9 +140,10 @@ import { SITE_TITLE } from "../consts";
       flex-direction: column;
     }
     nav h2 a {
-      padding: 1rem auto 0;
+      padding: .5rem auto 2px;
     }
     nav a {
+      padding: 8px 8px;
     }
 
     .social-links {

@@ -14,7 +14,6 @@ import {
   Instagram,
 } from "simple-icons-astro";
 
-import { posteos } from "@social";
 const SOCIAL_ICONS: Record<string, any> = {
   Facebook,
   Instagram,
@@ -31,8 +30,6 @@ import FormattedDate from "../FormattedDate.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-
-// const allPosts = await Astro.glob("@/pages/posts/*.md");
 ---
 
 <Section>
@@ -40,7 +37,19 @@ const posts = (await getCollection("blog")).sort(
     <News2 />Posts recientes
   </h2>
 
-  
+  <article class="suscribe-container">
+    <p>
+      Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
+      de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
+    </p>
+
+    <!-- <div class="box-left">
+      <a href="#" class="rss-btn">
+        <Rss class="h-3 w-3" />
+        <span>Suscríbete</span>
+      </a>
+    </div> -->
+  </article>
 
   <ul>
     {
@@ -76,7 +85,6 @@ const posts = (await getCollection("blog")).sort(
   }
   li p {
     font-size: 12px;
-    
   }
 
   /* li article,

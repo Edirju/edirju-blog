@@ -6,33 +6,10 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
-
-import { posteos } from "@social";
-import News2 from "@/icons/News2.astro";
-import News from "@/icons/News.astro";
-import {
-  Rss,
-  X,
-  Linkedin,
-  Threads,
-  Facebook,
-  Instagram,
-} from "simple-icons-astro";
-
-const SOCIAL_ICONS: Record<string, any> = {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Threads,
-  X,
-  News,
-};
-
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
-
 <!doctype html>
 <html lang="es">
   <head>

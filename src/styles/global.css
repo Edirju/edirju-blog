@@ -63,19 +63,23 @@ ul { list-style: none; padding: 0; margin: 0;}
 code { font-family:	Menlo,Monaco,	Lucida Console,	Liberation Mono, DejaVu Sans Mono,	Bitstream Vera Sans Mono,	Courier New, monospace;}
 
 .section-title {
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 	font-weight: 600;
 	line-height: 1.5;
+	letter-spacing: -.03em;
 	font-size: 20px;
 	text-transform: none;
-	color: rgb(var(--clr-light));
+	color: rgb(var(--clr-dark),.9);
 	width: fit-content;
 	padding: 1px 40px 1px 16px;
-	background: rgb(var(--clr-dark));
-	background: linear-gradient(0deg,
+	/* background: rgb(var(--clr-dark)); */
+	/* background: linear-gradient(0deg,
 			rgba(30, 37, 44, 1),
-			rgba(30, 37, 44, 0.7));
-	border-radius: 0px;
+			rgba(30, 37, 44, 0.7)); */
+	border-radius: 6px;
+	border: 3px solid rgb(var(--clr-dark), 0.9);
+	
+	box-shadow: 0.1em 0.1em rgb(var(--clr-dark), 0.9);
 }
 
 .suscribe-container {
