@@ -1,5 +1,6 @@
 ---
 import Section from "../Section.astro";
+
 import News2 from "@/icons/News2.astro";
 import News from "@/icons/News.astro";
 import RightArrow from "@/icons/RightArrow.astro";
@@ -65,9 +66,7 @@ const posts = (await getCollection("blog")).sort(
         </li>
       ))
     }
-  </ul>
-</Section>
-
+  
 <style>
   ul {
     display: grid;
