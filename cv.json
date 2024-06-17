@@ -471,9 +471,9 @@
   ],
   "projects": [
     {
-      "name": "Clon de Spotify",
+      "name": "Spotify Clone",
       "isActive": true,
-      "description": "Proyecto que emula la función básica de reproducción de audio.",
+      "description": "Clone en HTML, CSS y JS con función básica de reproducción de audio.",
       "highlights": ["Astro", "Svelte", "React", "Tailwind"],
       "url": "https://spotify-clone-project-beta.vercel.app/",
       "github": "https://github.com/Edirju/spotify-clone"
@@ -481,7 +481,7 @@
     {
       "name": "Reproductor de Música",
       "isActive": true,
-      "description": "Aplicación que permite la reproduccion de audios.",
+      "description": "Aplicación simple que permite la reproduccion de audios.",
       "highlights": ["HTML", "CSS", "JavaScript"],
       "url": "https://basic-music-player-app.netlify.app/",
       "github": "https://github.com/Edirju/musisc_player"
@@ -590,7 +590,7 @@
     },
     {
       "name": "Pókedex Api App",
-      "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
+      "description": "Playground de código HTML, CSS y JavaScript para una API de Pókedex",
       "highlights": ["JavaScript", "HTML", "CSS"],
       "url": "https://pokedex-cool-database.netlify.app/",
       "github": "https://github.com/Edirju/pokedex_api"
