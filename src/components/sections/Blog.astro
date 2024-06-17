@@ -66,28 +66,35 @@ const posts = (await getCollection("blog")).sort(
         </li>
       ))
     }
-  
-<style>
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5rem;
-  }
 
-  li a img {
-    margin-bottom: 0.5rem;
-    border-radius: 8px;
-  }
-  
-  li h4 {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  li p {
-    font-size: 12px;
-  }
+    <style>
+      ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.5rem;
+      }
 
-  /* li article,
+      li a img {
+        margin-bottom: 0.5rem;
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      li a img:hover {
+        box-shadow:
+          4px 4px 8px rgb(var(--clr-dark), 0.15),
+          -4px -4px 8px rgb(var(--clr-dark), 0.15);
+      }
+
+      li h4 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      li p {
+        font-size: 12px;
+      }
+
+      /* li article,
   .items {
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -142,8 +149,8 @@ const posts = (await getCollection("blog")).sort(
     text-wrap: pretty;
   } */
 
-  @media (width <= 700px) {
-    /* ul {
+      @media (width <= 700px) {
+        /* ul {
       flex-direction: row;
       justify-content: center;
     }
@@ -151,5 +158,7 @@ const posts = (await getCollection("blog")).sort(
       width: 300px;
       height: 66px;
     } */
-  }
-</style>
+      }
+    </style>
+  </ul></Section
+>
