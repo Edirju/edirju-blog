@@ -63,7 +63,7 @@ ul { list-style: none; padding: 0; margin: 0;}
 code { font-family:	Menlo,Monaco,	Lucida Console,	Liberation Mono, DejaVu Sans Mono,	Bitstream Vera Sans Mono,	Courier New, monospace;}
 
 .section-title {
-	margin-bottom: 1.5rem;
+	margin-bottom: 2rem;
 	font-weight: 600;
 	line-height: 1.5;
 	letter-spacing: -.03em;

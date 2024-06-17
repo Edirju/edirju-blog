@@ -1,5 +1,4 @@
 ---
-
 import { ViewTransitions } from "astro:transitions";
 
 import type { CollectionEntry } from "astro:content";
@@ -19,11 +18,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <BaseHead title={title} description={description} />
     <ViewTransitions />
     <style>
-      main {
+      /* main {
         width: calc(100% - 2em);
         max-width: 100%;
         margin: 0;
-      }
+      }*/
       .hero-image {
         width: 100%;
       }
@@ -32,14 +31,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         margin: 0 auto;
         border-radius: 12px;
         box-shadow: var(--box-shadow);
-      }
+      }/*
       .prose {
-        width: 720px;
+        width: 700px;
         max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
+        margin: 0 auto;
+        padding: 0;
         color: rgb(var(--gray-dark));
-      }
+      }*/
       .title {
         margin-bottom: 1em;
         padding: 1em 0;
@@ -66,7 +65,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <div class="hero-image mb-2">
           {
             heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
+              <img
+                width={1020}
+                height={510}
+                src={heroImage}
+                alt=""
+                
+              />
             )
           }
         </div>
@@ -82,16 +87,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                 )
               }
             </div>
-            <h1 class="text-center text-3xl font-black tracking-tight mb-2">{title}</h1>
+            <h1 class="text-center text-3xl font-black tracking-tight mb-2">
+              {title}
+            </h1>
             <hr />
           </div>
           <slot />
         </div>
       </article>
-    </Section>
-    <main>
-    </main>
-    <Footer /> 
+    </Section>    
+    <Footer />
 
     <script>
       import "../scripts/main.js";
