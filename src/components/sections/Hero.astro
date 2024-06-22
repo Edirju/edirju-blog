@@ -44,11 +44,13 @@ const printInfo = [
 
 <Section>
   <article
-    class="hero-section max-w-[700px] flex flex-row items-center justify-between mx-auto mb-0 mt-4"
+    class="hero-section max-w-[43.75rem] flex flex-row items-center justify-between mx-auto mb-0 mt-4"
   >
     <div class="hero-info flex flex-col gap-4">
-      <h1 class="text-4xl font-black tracking-tighter text-pretty transition duration-300 ease-in-out hover:drop-shadow-lg">
-        Hola! Soy Edinson Rivera.
+      <h1
+        class="text-4xl font-black tracking-tighter text-pretty transition duration-300 ease-in-out hover:drop-shadow-lg"
+      >
+        Hola! Soy <span class="text-title-hero">Edinson Rivera</span>.
       </h1>
 
       <h2 class="text-base font-light text-balance">
@@ -57,7 +59,7 @@ const printInfo = [
 
       <span class="flex items-center gap-2 text-sm">
         <WorldMap />
-        {city}, {region}        
+        {city}, {region}
       </span>
 
       <footer class="print">
@@ -112,62 +114,64 @@ const printInfo = [
     </div>
 
     <figure class="hero-image flex flex-col gap-2 items-center justify-center">
-      <img src={image} alt={name} />
-      <!-- <a href="#">Ver Resume</a> -->
+      <img src={image} alt={name} />      
     </figure>
   </article>
 </Section>
 
 <style>
+  .hero-info h1, .hero-info h2 {
+    color: rgb(var(--light));
+  }
+  .hero-info .text-title-hero {
+    text-shadow: 0 0 16px rgb(var(--primary-100), 0.25);
+    background: rgb(var(--dark));
+    background: linear-gradient(
+      to left,
+      rgb(var(--primary-100), 0.95) 0%,
+      rgb(var(--primary-100), 0.55) 50%,
+      rgb(var(--primary-100), 0.95) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .hero-info span {
-    color: rgb(30, 37, 44, 0.45);
+    color: rgb(var(--light), 0.45);
   }
 
   .hero-image img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 330px;
-  }
-
-  /* .CV {
-    font-size: 11px;
-    font-weight: 300;
-    text-transform: uppercase;
-    padding: 2px 4px;
-    color: rgb(var(--clr-dark), 0.35);
-    width: fit-content;
-    border: 1px solid rgb(var(--clr-dark), 0.35);
-    border-radius: 4px;
-    box-shadow: 0.1em 0.1em rgb(var(--clr-dark), 0.35);
-  } */
+    width: 20.625rem;
+  }  
 
   footer {
     display: flex;
-    gap: 8px;
-    font-size: 10px;
+    gap: .5rem;
+    font-size: .625rem;
   }
 
   footer a {
-    color: rgb(30, 37, 44, 0.55);
+    color: rgb(var(--light), 0.55);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(30, 37, 44, 0.08);
-    border-radius: 6px;
-    padding: 4px;
-    height: 32px;
-    width: 32px;
+    border: .0625rem solid rgb(var(--light), 0.08);
+    border-radius: .375rem;
+    padding: .25rem;
+    height: 2rem;
+    width: 2rem;
 
     transition: all 0.2s ease;
   }
 
   footer a:hover {
-    background-color: rgb(30, 37, 44, 0.08);
-    border: 1px solid rgb(30, 37, 44, 0.08);
-    color: rgb(30, 37, 44, 1);
+    background-color: rgb(var(--light), 0.08);
+    border: .0625rem solid rgb(var(--primary-100), 0.08);
+    color: rgb(var(--primary-100));
   }
 
-  @media (width <= 700px) {
+  @media (width <= 43.75rem) {
     .hero-section {
       flex-direction: column-reverse;
     }
@@ -179,7 +183,7 @@ const printInfo = [
     }
 
     .hero-info h1 {
-      font-size: 32px;
+      font-size: 2rem;
     }
 
     .hero-info h2 {

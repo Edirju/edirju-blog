@@ -18,6 +18,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <BaseHead title={title} description={description} />
     <ViewTransitions />
     <style>
+      /* body {
+        background: rgb(var(--light));
+      } */
       /* main {
         width: calc(100% - 2em);
         max-width: 100%;
@@ -44,13 +47,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         padding: 1em 0;
         text-align: center;
         line-height: 1;
+        color: rgb(var(--light));
       }
       .title h1 {
         margin: 0 0 0.5em 0;
       }
       .date {
         margin-bottom: 0.5em;
-        color: rgb(var(--gray));
+        color: rgb(var(--light), 0.5);
       }
       .last-updated-on {
         font-style: italic;
@@ -95,11 +99,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
           <slot />
         </div>
       </article>
-    </Section>    
-    <Footer />
+    </Section>  
+    
+    <Footer /> 
 
     <script>
       import "../scripts/main.js";
     </script>
   </body>
 </html>
+

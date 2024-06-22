@@ -26,7 +26,7 @@ const SKILL_ICONS: Record<string, any> = {
 };
 ---
 
-<Section id="proyectos1">
+<Section>
   <article class="suscribe-container mt-6">
     <p>
       Los pequeños detalles marcan una gran diferencia. Con los años he
@@ -95,11 +95,11 @@ const SKILL_ICONS: Record<string, any> = {
   .projects-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: .5rem;
+    gap: 0.5rem;
   }
   .items {
     overflow: hidden;
-    background-color: rgb(var(--clr-light));
+    /* background-color: rgb(var(--light)); */
 
     padding: 8px;
     transition: all 0.3s ease-in-out;
@@ -107,16 +107,16 @@ const SKILL_ICONS: Record<string, any> = {
 
     border: 2px solid transparent;
     background:
-      linear-gradient(#fffefe, #fffdfb) padding-box,
-      linear-gradient(to top, #053d91, #3943c7, #1e252c) border-box;
+      linear-gradient(#004e92, #004e92) padding-box,
+      linear-gradient(to top, rgb(var(--primary-100),.9), rgb(var(--light), .5), rgb(var(--light), .8)) border-box;
     border-radius: 10px;
   }
   .items:hover {
-    background-color: rgb(var(--clr-light));
-    border: 2px solid rgb(var(--clr-dark), 0.01);
+    /* background-color: rgb(var(--light)); */
+    border: 2px solid rgb(var(--light), 0.1);
     box-shadow:
-      4px 4px 16px rgb(var(--clr-dark), 0.08),
-      -4px -4px 16px rgb(var(--clr-dark), 0.08);
+      4px 4px 16px rgb(var(--primary-100), 0.2),
+      -4px -4px 16px rgb(var(--primary-100), 0.2);
   }
   .item {
     display: flex;
@@ -135,7 +135,7 @@ const SKILL_ICONS: Record<string, any> = {
     font-weight: 500;
     letter-spacing: -0.05rem;
     text-wrap: pretty;
-    color: rgb(30, 37, 44, 0.9);
+    color: rgb(var(--dark), 0.9);
   }
   .item header h3 a:hover {
     text-decoration: underline;
@@ -147,7 +147,7 @@ const SKILL_ICONS: Record<string, any> = {
   .item header p {
     font-size: 12px;
     line-height: 1.4;
-    color: rgb(30, 37, 44, 0.65);
+    color: rgb(var(--dark), 0.65);
     text-wrap: pretty;
   }
   .item footer ul {
@@ -157,14 +157,14 @@ const SKILL_ICONS: Record<string, any> = {
   }
   .item footer ul span {
     font-size: 10px;
-    color: rgb(30, 37, 44, 0.5);
-    background: rgb(var(--clr-dark), 0.1);
+    color: rgb(var(--dark), 0.5);
+    background: rgb(var(--dark), 0.1);
     padding: 1px 3px;
     border-radius: 4px;
     width: fit-content;
   }
   .github-code-link {
-    color: rgb(30, 37, 44, 0.55);
+    color: rgb(var(--dark), 0.55);
     margin-left: 8px;
   }
 </style>

@@ -21,7 +21,7 @@ import { FOOTER } from "../consts";
 
   <footer>
     <div class="flex flex-col items-center gap-1</div>">
-      <img src="/avatar.svg" alt="" class="w-12 h-12" />
+      <img src="/avatar.svg" alt="" class="w-12 h-12 " />
       <h3>
         {FOOTER.name}
         {FOOTER.span}
@@ -88,35 +88,35 @@ import { FOOTER } from "../consts";
 <style>
   footer {    
     padding: 0em 1em 0em 1em;
-    background: linear-gradient(var(--gray-gradient)) no-repeat;
-    color: rgb(var(--clr-dark),0.65);
+    /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
+    
     text-align: center;
   }
 	h3 {
-		font-size: 1em;
+		font-size: 1rem;
 		letter-spacing: -0.05em;
-    color: rgb(var(--clr-dark));
+    color: rgb(var(--light));
 	}
   p{
-    color: rgb(var(--clr-dark),0.45);
-    font-size: 14px;
+    color: rgb(var(--light),0.45);
+    font-size: .875rem;
     
   }
   .social-links {
     display: flex;
     justify-content: center;
-    gap: 1em;
+    gap: 1rem;
     margin-top: 1em;
   }
   .social-links a {
     text-decoration: none;
-    color: rgb(var(--clr-dark), 0.65);
+    color: rgb(var(--light), 0.65);
 		transition-property: transform, color;
 		transition-duration: 0.3s, 0.5s;
 		transition-delay: 0s, 0.1s;
   }
   .social-links a:hover {
-    color: rgb(var(--clr-dark));
+    color: rgb(var(--primary-100));
 		transform: scale(1.2) rotate(360deg);
   }
 </style>

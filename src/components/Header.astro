@@ -1,79 +1,105 @@
 ---
+import Section from "./Section.astro";
 import HeaderLink from "./HeaderLink.astro";
 import { Github, X, Instagram, Threads, Linkedin } from "simple-icons-astro";
 import Logo from "../icons/Logo.astro";
+import Home from "@/icons/Home.astro";
+import News from "@/icons/News.astro";
+import Briefcase from "@/icons/BriefCaseAlt.astro";
+import Download from "@/icons/DownLoad2.astro";
 
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="mb-[72px] py-0 px-4">
-  <nav class="flex items-center justify-between">
-    <h2 class="font-black text-2xl text-[rgba(30,37,44,0.85)]">
-      <a href="/" class="flex items-center gap-2">
-        <Logo />
-        <span>Ediriv.</span>
-      </a>
+<header class="mb-[72px]" transition:animate="slide">
+  <div
+    class="container mx-auto flex flex-wrap py-4 flex-col items-center md:flex-row"
+  >
+    <h2
+      class="flex title-font font-medium items-center mb-4 text-white/65 hover:text-yellow-500 md:mb-0"
+    >
+      <Logo />
+      <span class="text-2xl font-bold ml-2 tracking-tighter">Edinson.</span>
     </h2>
 
-    <div class="internal-links text-sm font-light uppercase">
+    <nav
+      class="md:ml-auto md:mr-auto flex flex-wrap gap-6 items-center text-sm uppercase justify-center"
+    >
       <HeaderLink href="/">Inicio</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/blog">BlogPosts</HeaderLink>
       <HeaderLink href="/projects">Proyectos</HeaderLink>
-      <HeaderLink href="/resume" target="_blank">Resume</HeaderLink>
-    </div>
+    </nav>
 
-    <div class="social-links flex items-center">
+    <div
+      class="social-links inline-flex items-center gap-4 border-0 py-1 px-3 focus:outline-none rounded mt-4 md:mt-0"
+    >
       <a
         href="https://www.linkedin.com/in/edinson-rivera-jurado/"
         target="_blank"
+        class="text-white/50 hover:text-yellow-500"
+        title="Visitar perfil en Linkedin"
       >
         <span class="sr-only">Follow Edinson on Linkedin</span>
         <Linkedin />
       </a>
-      <a href="https://github.com/Edirju" target="_blank">
+      <a
+        href="https://github.com/Edirju"
+        target="_blank"
+        class="text-white/50 hover:text-yellow-500"
+        title="Visitar perfil de GitHub"
+      >
         <span class="sr-only">Go to Edinson's GitHub repo</span>
         <Github />
       </a>
-      <a href="https://www.instagram.com/edirju/" target="_blank">
-        <span class="sr-only">Follow Edinson on Instagram</span>
-        <Instagram />
-      </a>
-
-      <a href="https://www.threads.net/@edirju" target="_blank">
-        <span class="sr-only">Follow Edinson on Threads</span>
-        <Threads />
-      </a>
-
-      <a href="https://twitter.com/edinson_rivera" target="_blank">
-        <span class="sr-only">Follow Astro on X(Twitter)</span>
-        <X />
+      <a
+        href="/resume"
+        target="_blank"
+        class="text-white/65 hover:text-yellow-500"
+        title="Ver Curriculum Vitae"
+      >
+        <span class="sr-only">Download Edinson's Resume</span>
+        <Download />
       </a>
     </div>
-  </nav>
+  </div>
 </header>
 
 <style>
-  header {
-    background: rgb(var(--clr-light));
-    color: rgba(var(--clr-dark));
-    box-shadow: 0 0.125rem 0.5rem rgba(var(--black), 5%);
+  header {    
+    background-image: linear-gradient(
+      to top left in oklch,
+      oklch(42.38% 0.129764919838297 252.7742882507398) 0%,
+      oklch(34.75% 0.091 258.13) 100%
+    );
+    box-shadow: var(--box-shadow);
+  }
+
+  @media (width <= 700px) {
+    header {
+      margin-bottom: 38px;
+    }
+  }
+  /* header {
+    background: rgb(var(--light));
+    color: rgba(var(--dark));
+    box-shadow: 0 0.125rem 0.5rem rgba(var(--dark), 5%);
   }
 
   nav a {
     padding: 1rem 8px;
-    color: var(--black);
+    color: var(--dark);
     border-bottom: 4px solid transparent;
     text-decoration: none;
   }
   nav a:hover {
-    color: rgb(var(--clr-dark), 0.65);
+    color: rgb(var(--dark), 0.65);
   }
   nav a.active {
     text-decoration: none;
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--dark);
   }
   .social-links a {
-    color: rgb(var(--clr-dark), 0.85);
+    color: rgb(var(--dark), 0.85);
   }
 
   @media (width <= 700px) {
@@ -90,5 +116,5 @@ import { SITE_TITLE } from "../consts";
     .social-links {
       display: none;
     }
-  }
+  } */
 </style>
