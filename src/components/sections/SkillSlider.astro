@@ -1,8 +1,6 @@
 ---
 import Section from "../Section.astro";
 import Briefcase from "@/icons/BriefCaseAlt.astro";
-import { skills } from "@landing";
-
 import {
   Bootstrap,
   Css3,
@@ -34,8 +32,6 @@ import {
   Adobephotoshop,
 } from "simple-icons-astro";
 import Astrojs from "@/icons/AstroIcon.astro";
-import Next from "@/icons/Next.astro";
-import Node from "@/icons/Node.astro";
 ---
 
 <Section>
@@ -272,11 +268,11 @@ import Node from "@/icons/Node.astro";
 <style>
   .stock-ticker {
     font-family: var(--heading-font);
-    color: rgb(var(--dark), 0.65);
+    color: rgb(var(--black), 0.65);
     font-size: 12px;
     text-transform: uppercase;
     padding-block: 8px;
-    border-block: 2px dotted rgb(var(--light), 0.1);
+    border-block: 2px dotted rgb(var(--tertiary-100), 0.2);
     overflow: hidden;
     user-select: none;
 
@@ -341,11 +337,11 @@ import Node from "@/icons/Node.astro";
 
   .stock-ticker .plus,
   .stock-ticker .plus::before {
-    color: rgb(var(--quaternary-100));
+    color: rgb(var(--text-200));
   }
 
   .stock-ticker .minus,
   .stock-ticker .minus::before {
-    color: rgb(var(--light));
+    color: rgb(var(--tertiary-100));
   }
 </style>

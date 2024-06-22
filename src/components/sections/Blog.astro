@@ -35,7 +35,7 @@ const posts = (await getCollection("blog")).sort(
 
 <Section>
   <h2 class="section-title flex items-center gap-1">
-    <News2 />Posts recientes
+    <News2 />Posts publicados
   </h2>
 
   <article class="suscribe-container">
@@ -66,43 +66,38 @@ const posts = (await getCollection("blog")).sort(
         </li>
       ))
     }
-
-    
   </ul>
 </Section>
 
 <style>
-      ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 0.5rem;
-      }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
 
-      li a img {
-        margin-bottom: 0.5rem;
-        border-radius: 8px;
-        transition: all 0.2s ease-in-out;
-      }
+  li a img {
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+  }
 
-      li a img:hover {
-        box-shadow:
-          4px 4px 16px rgb(var(--light), 0.15),
-          -4px -4px 16px rgb(var(--light), 0.15);
-      }
+  li a img:hover {
+    box-shadow: 4px 4px 16px rgb(30,37,44,.2), -4px -4px 16px rgb(30,37,40, 0.25);
+    /* box-shadow: var(--box-shadow); */
+  }
 
-      li h4 {
-        font-size: .875rem;
-        font-weight: 600;
-        color: rgb(var(--light), 0.9);
-      }
-      li p {
-        font-size: .75rem;
-        color: rgb(var(--light), 0.55);
-      }
+  li h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgb(var(--text-200), 0.9);
+  }
 
-      
+  li p {
+    font-size: 0.75rem;
+    color: rgb(var(--text-100), 0.55);
+  }
 
-      @media (width <= 700px) {
-      
-      }
-    </style>
+  @media (width <= 700px) {
+  }
+</style>

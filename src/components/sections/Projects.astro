@@ -107,16 +107,16 @@ const SKILL_ICONS: Record<string, any> = {
 
     border: 2px solid transparent;
     background:
-      linear-gradient(#004e92, #004e92) padding-box,
-      linear-gradient(to top, rgb(var(--primary-100),.9), rgb(var(--light), .5), rgb(var(--light), .8)) border-box;
+      linear-gradient(#fff, #fffefe) padding-box,
+      linear-gradient(to top, rgb(var(--text-200),.9), rgb(var(--text-200), .5), rgb(var(--text-200), .8)) border-box;
     border-radius: 10px;
   }
   .items:hover {
     /* background-color: rgb(var(--light)); */
-    border: 2px solid rgb(var(--light), 0.1);
+    border: 2px solid rgb(var(--black), 0.1);
     box-shadow:
-      4px 4px 16px rgb(var(--primary-100), 0.2),
-      -4px -4px 16px rgb(var(--primary-100), 0.2);
+      4px 4px 16px rgb(var(--text-200), 0.2),
+      -4px -4px 16px rgb(var(--text-200), 0.2);
   }
   .item {
     display: flex;
@@ -135,7 +135,7 @@ const SKILL_ICONS: Record<string, any> = {
     font-weight: 500;
     letter-spacing: -0.05rem;
     text-wrap: pretty;
-    color: rgb(var(--dark), 0.9);
+    color: rgb(var(--text-100), 0.9);
   }
   .item header h3 a:hover {
     text-decoration: underline;
@@ -147,7 +147,7 @@ const SKILL_ICONS: Record<string, any> = {
   .item header p {
     font-size: 12px;
     line-height: 1.4;
-    color: rgb(var(--dark), 0.65);
+    color: rgb(var(--text-100), 0.65);
     text-wrap: pretty;
   }
   .item footer ul {
@@ -157,14 +157,14 @@ const SKILL_ICONS: Record<string, any> = {
   }
   .item footer ul span {
     font-size: 10px;
-    color: rgb(var(--dark), 0.5);
-    background: rgb(var(--dark), 0.1);
+    color: rgb(var(--text-200), 0.5);
+    background: rgb(var(--text-200), 0.1);
     padding: 1px 3px;
     border-radius: 4px;
     width: fit-content;
   }
   .github-code-link {
-    color: rgb(var(--dark), 0.55);
+    color: rgb(var(--text-100),.55);
     margin-left: 8px;
   }
 </style>

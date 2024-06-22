@@ -3,6 +3,7 @@ import "@fontsource-variable/montserrat";
 import "@fontsource/lato";
 import Layout from "../layouts/BlogPost.astro";
 import BaseHead from "../components/BaseHead.astro";
+import NoiseBackground from "@/components/NoiseBackground.astro";
 import Section from "../components/Section.astro";
 import Header from "../components/Header.astro";
 import Hero from "@/components/sections/Hero.astro";
@@ -23,14 +24,14 @@ const { name, label } = basics;
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <NoiseBackground />
     <Header />
     <Hero />
     <About />
-    <!-- <Skills /> -->
     <SkillSlider />
     <Blog />
     <PostsMedia />
-    
+
     <Footer />
   </body>
 </html>

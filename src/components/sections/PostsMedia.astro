@@ -77,26 +77,28 @@ const posts = (await getCollection("blog")).sort(
   }
   li article {
     padding: 0.5rem;
-    /* border: 1px solid rgb(var(--light), 0.1);     */
+    border: 1px solid rgb(var(--black), 0.1);    
     border: 2px solid transparent;
     background:
-      linear-gradient(#004e92, #193968) padding-box,
-      linear-gradient(to top, #fffefe, rgb(var(--light), 0.9)) border-box;
+      linear-gradient(#fffefe, #ffffff) padding-box,
+      linear-gradient(to top, rgb(var(--text-100)), rgb(var(--text-200), 0.9))
+        border-box;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
   }
   li article:hover {
-    background-color: rgb(var(--dark));
-    border: 2px solid rgb(var(--dark), 0.05);
+    cursor: pointer;
+    background-color: rgb(var(--black));
+    border: 2px solid rgb(var(--black), 0.05);
     box-shadow:
-      4px 4px 8px rgb(var(--light), 0.1),
-      -4px -4px 8px rgb(var(--light), 0.1);
+      4px 4px 8px rgb(var(--black), 0.2),
+      -4px -4px 8px rgb(var(--black), 0.2);
   }
   li article header {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    color: rgb(var(--light), 0.9);
+    color: rgb(var(--text-100));
   }
   li article header a {
     font-size: 14px;
@@ -112,10 +114,10 @@ const posts = (await getCollection("blog")).sort(
   li article p {
     font-size: 12px;
     line-height: 1.4;
-    color: rgb(var(--light), 0.55);
+    color: rgb(var(--black), 0.55);
     text-wrap: pretty;
   }
-  
+
   @media (width <= 700px) {
     /* ul {
       flex-direction: row;

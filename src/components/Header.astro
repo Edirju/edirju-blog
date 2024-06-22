@@ -12,18 +12,19 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="mb-[72px]" transition:animate="slide">
+  
   <div
     class="container mx-auto flex flex-wrap py-4 flex-col items-center md:flex-row"
   >
     <h2
-      class="flex title-font font-medium items-center mb-4 text-white/65 hover:text-yellow-500 md:mb-0"
+      class="flex title-font font-medium items-center mb-4 text-[rgba(var(--text-100),.75)] hover:text-[rgba(var(--text-100),.9)] md:mb-0"
     >
       <Logo />
       <span class="text-2xl font-bold ml-2 tracking-tighter">Edinson.</span>
     </h2>
 
     <nav
-      class="md:ml-auto md:mr-auto flex flex-wrap gap-6 items-center text-sm uppercase justify-center"
+      class="md:ml-auto md:mr-auto flex flex-wrap gap-6 items-center text-base justify-center"
     >
       <HeaderLink href="/">Inicio</HeaderLink>
       <HeaderLink href="/blog">BlogPosts</HeaderLink>
@@ -36,7 +37,7 @@ import { SITE_TITLE } from "../consts";
       <a
         href="https://www.linkedin.com/in/edinson-rivera-jurado/"
         target="_blank"
-        class="text-white/50 hover:text-yellow-500"
+        class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--tertiary-100),.8)]"
         title="Visitar perfil en Linkedin"
       >
         <span class="sr-only">Follow Edinson on Linkedin</span>
@@ -45,7 +46,7 @@ import { SITE_TITLE } from "../consts";
       <a
         href="https://github.com/Edirju"
         target="_blank"
-        class="text-white/50 hover:text-yellow-500"
+        class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--tertiary-100),.8)]"
         title="Visitar perfil de GitHub"
       >
         <span class="sr-only">Go to Edinson's GitHub repo</span>
@@ -54,7 +55,7 @@ import { SITE_TITLE } from "../consts";
       <a
         href="/resume"
         target="_blank"
-        class="text-white/65 hover:text-yellow-500"
+        class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--tertiary-100),.8)]"
         title="Ver Curriculum Vitae"
       >
         <span class="sr-only">Download Edinson's Resume</span>
@@ -65,11 +66,11 @@ import { SITE_TITLE } from "../consts";
 </header>
 
 <style>
-  header {    
+  header {
     background-image: linear-gradient(
-      to top left in oklch,
-      oklch(42.38% 0.129764919838297 252.7742882507398) 0%,
-      oklch(34.75% 0.091 258.13) 100%
+      to top right in oklab,
+      oklch(99.78% 0.001 17.18) 0%,
+      oklch(99.42% 0.006926120788662864 88.6411446312505) 100%
     );
     box-shadow: var(--box-shadow);
   }
