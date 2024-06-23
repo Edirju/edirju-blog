@@ -78,19 +78,19 @@ const posts = (await getCollection("blog")).sort(
 
   li a img {
     margin-bottom: 0.5rem;
-    border-radius: 8px;
+    border-radius: .5rem;
     transition: all 0.2s ease-in-out;
   }
 
   li a img:hover {
-    box-shadow: 4px 4px 16px rgb(30,37,44,.2), -4px -4px 16px rgb(30,37,40, 0.25);
+    box-shadow: 4px 4px 16px rgb(var(--text-100),.2), -4px -4px 16px rgb(var(--text-100), 0.25);
     /* box-shadow: var(--box-shadow); */
   }
 
   li h4 {
     font-size: 0.875rem;
     font-weight: 600;
-    color: rgb(var(--text-200), 0.9);
+    color: rgb(var(--text-100), 0.9);
   }
 
   li p {
