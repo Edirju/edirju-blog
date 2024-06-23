@@ -12,7 +12,6 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="mb-[72px]" transition:animate="slide">
-  
   <div
     class="container mx-auto flex flex-wrap py-4 flex-col items-center md:flex-row"
   >
@@ -26,9 +25,9 @@ import { SITE_TITLE } from "../consts";
     <nav
       class="md:ml-auto md:mr-auto flex flex-wrap gap-6 items-center text-base justify-center"
     >
-      <HeaderLink href="/">Inicio</HeaderLink>
-      <HeaderLink href="/blog">BlogPosts</HeaderLink>
-      <HeaderLink href="/projects">Proyectos</HeaderLink>
+      <HeaderLink href="/"><Home />Inicio</HeaderLink>
+      <HeaderLink href="/blog"><News />BlogPosts</HeaderLink>
+      <HeaderLink href="/projects"><Briefcase />Proyectos</HeaderLink>
     </nav>
 
     <div
@@ -37,7 +36,7 @@ import { SITE_TITLE } from "../consts";
       <a
         href="https://www.linkedin.com/in/edinson-rivera-jurado/"
         target="_blank"
-        class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--tertiary-100),.8)]"
+        class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--text-200),.8)]"
         title="Visitar perfil en Linkedin"
       >
         <span class="sr-only">Follow Edinson on Linkedin</span>
@@ -46,7 +45,7 @@ import { SITE_TITLE } from "../consts";
       <a
         href="https://github.com/Edirju"
         target="_blank"
-        class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--tertiary-100),.8)]"
+        class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--text-200),.8)]"
         title="Visitar perfil de GitHub"
       >
         <span class="sr-only">Go to Edinson's GitHub repo</span>

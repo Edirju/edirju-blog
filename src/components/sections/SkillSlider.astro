@@ -30,6 +30,7 @@ import {
   Nodedotjs,
   Photopea,
   Adobephotoshop,
+  Canva,
 } from "simple-icons-astro";
 import Astrojs from "@/icons/AstroIcon.astro";
 ---
@@ -47,7 +48,7 @@ import Astrojs from "@/icons/AstroIcon.astro";
     </p>
   </article>
 
-  <div class="stock-ticker">
+  <div class="stock-ticker shadow-[inset_-12px_-8px_40px_#46464620]">
     <ul>
       <li class="minus">
         <Html5 class="w-4 h-4" />
@@ -272,13 +273,20 @@ import Astrojs from "@/icons/AstroIcon.astro";
     font-size: 12px;
     text-transform: uppercase;
     padding-block: 8px;
-    border-block: 2px dotted rgb(var(--tertiary-100), 0.2);
+    border-block: 2px dotted rgb(var(--text-100), 0.2);
     overflow: hidden;
     user-select: none;
 
     --gap: 20px;
     display: flex;
     gap: var(--gap);
+
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 10% 90%,
+      transparent
+    );
   }
 
   .stock-ticker ul {
@@ -342,6 +350,6 @@ import Astrojs from "@/icons/AstroIcon.astro";
 
   .stock-ticker .minus,
   .stock-ticker .minus::before {
-    color: rgb(var(--tertiary-100));
+    color: rgb(var(--accent-100));
   }
 </style>
