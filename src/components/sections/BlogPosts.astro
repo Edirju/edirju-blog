@@ -54,110 +54,107 @@ const posts = (await getCollection("blog")).sort(
     </div>
   </article>
 
-  <ul class="mb-2">
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}/`}>
-            <img width={720} height={360} src={post.data.heroImage} alt="" />
-            <h4 class="title">{post.data.title}</h4>
-            <p class="date">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-
-  <ul>
-    {
-      posteos.map(({ network, title, description, url }) => {
-        const Icon = SOCIAL_ICONS[network];
-
-        return (
+  <div class="container_posts">
+    <ul class="blog_post">
+      {
+        posts.map((post) => (
           <li>
-            <article>
-              <header>
-                <Icon class="w-4 h-4" />
-                <h3 class="truncate">
-                  <a
-                    href={url}
-                    title={`Ver el proyecto ${title}`}
-                    target="_blank"
-                  >
-                    {title}
-                  </a>
-                </h3>
-              </header>
-              <p class="line-clamp-2">{description}</p>
-            </article>
+            <a href={`/blog/${post.slug}/`}>
+              <p class="date">
+                <FormattedDate date={post.data.pubDate} />
+              </p>
+              <h4 class="title">{post.data.title}</h4>
+              <p class="description">{post.data.description}</p>
+              <p class="more">Leer nota →</p>
+            </a>
           </li>
-        );
-      })
-    }
-  </ul>
+        ))
+      }
+    </ul>
+
+    <ul class="social_post">
+      {
+        posteos.map(({ network, title, description, url, date }) => {
+          const Icon = SOCIAL_ICONS[network];
+
+          return (
+            <li>
+              <a href={url}>
+                <p class="date">
+                  <Icon class="w-[14px] h-[14px]" />
+                  {date}
+                </p>
+                <h3 class="title">{title}</h3>
+                <p class="description">{description}</p>
+                <p class="more goto">Ir a post →</p>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
 </Section>
 
 <style>
-  ul {
+  .container_posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4px;
   }
-  li article,
-  .items {
+  .blog_post,
+  .social_post {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    height: fit-content;
+  }
+  .blog_post li,
+  .social_post li {
+    /* border: 1px solid blue; */
     padding: 8px;
     border-radius: 8px;
-    border: .0625rem solid rgb(var(--dark), 0.08);
+  }
+  li {
+    transition: all 0.3s ease-in-out;
+  }
+  li:hover {
+    background-color: rgb(var(--dark), 0.05); /* Pendiente el cambio del color*/
+  }
+  li a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .date {
+    font-size: 12px;
+    color: rgb(var(--dark), 0.5);
+    text-wrap: pretty;
+    border-left: 2px solid rgb(var(--dark), 0.25);
+    padding-left: 8px;
 
-    transition: all 0.2s ease-in-out;    
-  }
-  li article:hover,
-  .items:hover {
-    background-color: rgb(var(--dark), 0.08);
-  }
-  li article header {
     display: flex;
     align-items: center;
     gap: 4px;
   }
-  li article header a {
-    font-size: .875rem;
-    font-weight: 500;
-    color: rgb(var(--dark), 0.9);
-    inset: 0;
-    width: auto;
+  .title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(var(--dark), 0.75);
   }
-  li article header a:hover {
-    text-decoration: underline;
-    text-underline-offset: .25rem;
-  }
-  li article p {
-    font-size: .75rem;
-    line-height: 1.4;
-    color: rgb(var(--dark), 0.65);
+  .description {
+    font-size: 14px;
+    color: rgb(var(--dark), 0.55);
     text-wrap: pretty;
   }
-  .items a {
-    display: flex;
-    align-items: center;
-    gap: .25rem;
-  }
-  .items a h3 {
-    font-size: .875rem;
-    font-weight: 500;
-    color: rgb(var(--dark), 0.85);
-  }
-  .items a h3:hover {
-    text-decoration: underline;
-    text-underline-offset: .25rem;
-  }
-  .items p {
-    font-size: .75rem;
-    color: rgb(var, 0.65);
-    text-wrap: pretty;
-  }
+  .more {
+    font-size: 14px;
+    font-weight: bolder;
+    color: rgb(var(--secondary-100),.85);
+    letter-spacing: 0.05em;
+  }  
 
   @media (width <= 43.75rem) {
     /* ul {

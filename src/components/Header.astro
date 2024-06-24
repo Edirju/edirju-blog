@@ -3,7 +3,7 @@ import Section from "./Section.astro";
 import HeaderLink from "./HeaderLink.astro";
 import { Github, X, Instagram, Threads, Linkedin } from "simple-icons-astro";
 import Logo from "../icons/Logo.astro";
-import Home from "@/icons/Home.astro";
+import Home from "@/icons/Home-2.astro";
 import News from "@/icons/News.astro";
 import Briefcase from "@/icons/BriefCaseAlt.astro";
 import Download from "@/icons/DownLoad2.astro";
@@ -24,7 +24,7 @@ import { SITE_TITLE } from "../consts";
       </h2>
 
       <nav
-        class="md:ml-auto md:mr-auto flex flex-wrap gap-4 items-center text-xs uppercase justify-center tracking-tighter text-gray-500"
+        class="md:ml-auto md:mr-auto flex flex-wrap gap-4 items-center text-xs uppercase justify-center tracking-tighter"
       >
         <HeaderLink href="/"><Home />Inicio</HeaderLink>
         <HeaderLink href="/blog"><News />BlogPosts</HeaderLink>
@@ -37,7 +37,7 @@ import { SITE_TITLE } from "../consts";
         <a
           href="https://www.linkedin.com/in/edinson-rivera-jurado/"
           target="_blank"
-          class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--text-200),.8)]"
+          class="hover:text-[rgba(var(--text-200),.95)]"
           title="Visitar perfil en Linkedin"
         >
           <span class="sr-only">Follow Edinson on Linkedin</span>
@@ -46,7 +46,7 @@ import { SITE_TITLE } from "../consts";
         <a
           href="https://github.com/Edirju"
           target="_blank"
-          class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--text-200),.8)]"
+          class="hover:text-[rgba(var(--text-200),.95)]"
           title="Visitar perfil de GitHub"
         >
           <span class="sr-only">Go to Edinson's GitHub repo</span>
@@ -55,7 +55,7 @@ import { SITE_TITLE } from "../consts";
         <a
           href="/resume"
           target="_blank"
-          class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--tertiary-100),.8)]"
+          class="hover:text-[rgba(var(--text-200),.95)]"
           title="Ver Curriculum Vitae"
         >
           <span class="sr-only">Download Edinson's Resume</span>
@@ -63,57 +63,6 @@ import { SITE_TITLE } from "../consts";
         </a>
       </div>
     </div>
-
-    <!-- <div
-      class="container mx-auto flex flex-wrap py-4 flex-col items-center md:flex-row"
-    >
-      <h2
-        class="flex title-font font-medium items-center mb-4 text-[rgba(var(--text-100),.75)] hover:text-[rgba(var(--text-100),.9)] md:mb-0"
-      >
-        <Logo />
-        <span class="text-2xl font-bold ml-2 tracking-tighter">Edinson.</span>
-      </h2>
-  
-      <nav
-        class="md:ml-auto md:mr-auto flex flex-wrap gap-6 items-center text-base justify-center"
-      >
-        <HeaderLink href="/"><Home />Inicio</HeaderLink>
-        <HeaderLink href="/blog"><News />BlogPosts</HeaderLink>
-        <HeaderLink href="/projects"><Briefcase />Proyectos</HeaderLink>
-      </nav>
-  
-      <div
-        class="social-links inline-flex items-center gap-4 border-0 py-1 px-3 focus:outline-none rounded mt-4 md:mt-0"
-      >
-        <a
-          href="https://www.linkedin.com/in/edinson-rivera-jurado/"
-          target="_blank"
-          class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--text-200),.8)]"
-          title="Visitar perfil en Linkedin"
-        >
-          <span class="sr-only">Follow Edinson on Linkedin</span>
-          <Linkedin />
-        </a>
-        <a
-          href="https://github.com/Edirju"
-          target="_blank"
-          class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--text-200),.8)]"
-          title="Visitar perfil de GitHub"
-        >
-          <span class="sr-only">Go to Edinson's GitHub repo</span>
-          <Github />
-        </a>
-        <a
-          href="/resume"
-          target="_blank"
-          class="text-[rgba(var(--text-100),.8)] hover:text-[rgba(var(--tertiary-100),.8)]"
-          title="Ver Curriculum Vitae"
-        >
-          <span class="sr-only">Download Edinson's Resume</span>
-          <Download />
-        </a>
-      </div>
-    </div> -->
   </header>
 </Section>
 
@@ -122,17 +71,15 @@ import { SITE_TITLE } from "../consts";
     border: 1px solid rgb(var(--light), 1);
     padding: 8px 12px;
     border-radius: 8px;
-    background: rgb(var(--light));
-    box-shadow: var(--box-shadow);
-  }
-  /* header {
     background-image: linear-gradient(
       to top right in oklab,
       oklch(99.78% 0.001 17.18) 0%,
       oklch(99.42% 0.006926120788662864 88.6411446312505) 100%
     );
+    /* background: rgb(var(--light)); */
     box-shadow: var(--box-shadow);
-  } */
+  }
+  
 
   @media (width <= 700px) {
     /* header {

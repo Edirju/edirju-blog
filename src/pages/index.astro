@@ -12,6 +12,7 @@ import Skills from "@/components/sections/Skills.astro";
 import SkillSlider from "@/components/sections/SkillSlider.astro";
 import PostsMedia from "@/components/sections/PostsMedia.astro";
 import Blog from "@/components/sections/Blog.astro";
+import BlogPosts from "@/components/sections/BlogPosts.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { basics } from "@landing";
@@ -29,9 +30,9 @@ const { name, label } = basics;
     <Hero />
     <About />
     <SkillSlider />
-    <Blog />
-    <PostsMedia />
-
+    <!-- <Blog /> -->
+    <!-- <PostsMedia /> -->
+    <BlogPosts />
     <Footer />
   </body>
 </html>
