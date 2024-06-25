@@ -42,26 +42,26 @@ const posts = (await getCollection("blog")).sort(
 
   <ul>
     {
-      posteos.map(({ network, title, description, url }) => {
+      posteos.map(({ network, title, description, url, date }) => {
         const Icon = SOCIAL_ICONS[network];
 
         return (
-          <li>
-            <article>
-              <header>
-                <Icon class="w-4 h-4" />
-                <h3 class="truncate">
-                  <a
-                    href={url}
-                    title={`Ver el proyecto ${title}`}
-                    target="_blank"
-                  >
-                    {title}
-                  </a>
-                </h3>
-              </header>
-              <p class="line-clamp-2">{description}</p>
-            </article>
+          <li class="py-2 px-4 rounded-md">
+            <a href={url} class="flex flex-col gap-2">
+              <p class="date flex items-center gap-1 text-xs text-[#1e252c60] text-pretty border-l-2 border-[#004E9290] pl-2">
+                <Icon class="w-[14px] h-[14px]" />
+                {date}
+              </p>
+              <h3 class="title text-base font-semibold text-[#1e252c]">
+                {title}
+              </h3>
+              <p class="description text-sm text-pretty text-[#1e252c60]">
+                {description}
+              </p>
+              <p class="more text-sm tracking-wide text-[#EC4568] hover:font-bold">
+                Ir a post →
+              </p>
+            </a>
           </li>
         );
       })
@@ -72,52 +72,16 @@ const posts = (await getCollection("blog")).sort(
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
   }
-  li article {
-    padding: 0.5rem;
-    border: 1px solid rgb(var(--black), 0.1);    
-    border: 2px solid transparent;
-    background:
-      linear-gradient(#fffefe, #ffffff) padding-box,
-      linear-gradient(to top, rgb(var(--text-100)), rgb(var(--text-200), 0.9))
-        border-box;
-    border-radius: 10px;
-    transition: all 0.2s ease-in-out;
+  li {
+    transition: all 0.3s ease-in-out;
   }
-  li article:hover {
-    cursor: pointer;
-    background-color: rgb(var(--black));
-    border: 2px solid rgb(var(--black), 0.05);
-    box-shadow:
-      4px 4px 8px rgb(var(--black), 0.2),
-      -4px -4px 8px rgb(var(--black), 0.2);
+  li:hover {
+    background-color: rgb(var(--dark), 0.05);    
   }
-  li article header {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    color: rgb(var(--text-100));
-  }
-  li article header a {
-    font-size: 14px;
-    font-weight: 500;
-    /* color: rgb(var(--light), 0.9); */
-    inset: 0;
-    width: auto;
-  }
-  li article header a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-  li article p {
-    font-size: 12px;
-    line-height: 1.4;
-    color: rgb(var(--black), 0.55);
-    text-wrap: pretty;
-  }
-
+  
   @media (width <= 700px) {
     /* ul {
       flex-direction: row;

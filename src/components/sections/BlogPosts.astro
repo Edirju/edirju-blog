@@ -2,9 +2,6 @@
 import Section from "../Section.astro";
 import News2 from "@/icons/News2.astro";
 import News from "@/icons/News.astro";
-import RightArrow from "@/icons/RightArrow.astro";
-import Filetextfill from "@/icons/Filetextfill.astro";
-
 import {
   Rss,
   X,
@@ -13,7 +10,6 @@ import {
   Facebook,
   Instagram,
 } from "simple-icons-astro";
-
 import { posteos } from "@social";
 const SOCIAL_ICONS: Record<string, any> = {
   Facebook,
@@ -23,21 +19,17 @@ const SOCIAL_ICONS: Record<string, any> = {
   X,
   News,
 };
-
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
-
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-
 // const allPosts = await Astro.glob("@/pages/posts/*.md");
 ---
-
 <Section>
   <h2 class="section-title flex items-center gap-1">
-    <News2 />Blog | Social Media
+    <News2 />Blog & Notas
   </h2>
 
   <article class="suscribe-container">
@@ -45,17 +37,16 @@ const posts = (await getCollection("blog")).sort(
       Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
       de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
     </p>
-
-    <div class="box-left">
+    <!-- <div class="box-left">
       <a href="#" class="rss-btn">
         <Rss class="h-3 w-3" />
-        <!-- <span>Suscríbete</span> -->
+        <span>Suscríbete</span>
       </a>
-    </div>
+    </div> -->
   </article>
 
   <div class="container_posts">
-    <ul class="blog_post">
+    <ul class="blog_post">      
       {
         posts.map((post) => (
           <li>
@@ -72,7 +63,7 @@ const posts = (await getCollection("blog")).sort(
       }
     </ul>
 
-    <ul class="social_post">
+    <ul class="social_post">      
       {
         posteos.map(({ network, title, description, url, date }) => {
           const Icon = SOCIAL_ICONS[network];
@@ -114,14 +105,14 @@ const posts = (await getCollection("blog")).sort(
   .blog_post li,
   .social_post li {
     /* border: 1px solid blue; */
-    padding: 8px;
+    padding: 8px 16px;
     border-radius: 8px;
   }
   li {
     transition: all 0.3s ease-in-out;
   }
   li:hover {
-    background-color: rgb(var(--dark), 0.05); /* Pendiente el cambio del color*/
+    background-color: rgb(var(--dark), 0.05);
   }
   li a {
     display: flex;
@@ -132,7 +123,7 @@ const posts = (await getCollection("blog")).sort(
     font-size: 12px;
     color: rgb(var(--dark), 0.5);
     text-wrap: pretty;
-    border-left: 2px solid rgb(var(--dark), 0.25);
+    border-left: 2px solid rgb(var(--text-200), 0.45);
     padding-left: 8px;
 
     display: flex;
@@ -146,17 +137,17 @@ const posts = (await getCollection("blog")).sort(
   }
   .description {
     font-size: 14px;
-    color: rgb(var(--dark), 0.55);
+    color: rgb(var(--dark), 0.45);
     text-wrap: pretty;
   }
   .more {
     font-size: 14px;
     font-weight: bolder;
-    color: rgb(var(--secondary-100),.85);
+    color: rgb(var(--secondary-100), 0.85);
     letter-spacing: 0.05em;
-  }  
+  }
 
-  @media (width <= 43.75rem) {
+  @media (width <= 700px) {
     /* ul {
       flex-direction: row;
       justify-content: center;

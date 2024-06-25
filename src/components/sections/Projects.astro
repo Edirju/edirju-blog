@@ -1,7 +1,6 @@
 ---
 import Section from "../Section.astro";
 import { basics, projects } from "@cv";
-
 import {
   Rss,
   Github,
@@ -15,7 +14,6 @@ import {
 import Circle from "@/icons/circle.astro";
 import AstroIcon from "@/icons/AstroIcon.astro";
 import Data from "@/icons/Data.astro";
-
 const SKILL_ICONS: Record<string, any> = {
   Html5,
   Css3,
@@ -46,14 +44,14 @@ const SKILL_ICONS: Record<string, any> = {
       projects.map(
         ({ url, description, highlights, name, isActive, github }) => {
           return (
-            <li class="items">
-              <article class="item">
+            <li>
+              <article>
                 <header>
-                  <h3 class="">
+                  <h3>
                     <a
                       href={url}
                       title={`Ver el proyecto ${name}`}
-                      target="_blank"
+                      target="_blank"                      
                     >
                       {name}
                     </a>
@@ -73,12 +71,18 @@ const SKILL_ICONS: Record<string, any> = {
                       </a>
                     )}
                   </h3>
-                  <p class=" line-clamp-2">{description}</p>
+                  <p>
+                    {description}
+                  </p>
                 </header>
                 <footer>
                   <ul>
                     {highlights.map((highlight) => {
-                      return <span>{highlight}</span>;
+                      return (
+                        <span>
+                          {highlight}
+                        </span>
+                      );
                     })}
                   </ul>
                 </footer>
@@ -94,73 +98,76 @@ const SKILL_ICONS: Record<string, any> = {
 <style>
   .projects-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
-  .items {
-    overflow: hidden;
-    padding: 8px;
-    transition: all 0.3s ease-in-out;
+  li {    
+    padding: .5rem;
+    border-radius: .5rem;
     position: relative;
-    border: 2px solid transparent;
-    background:
-      linear-gradient(#fff, #fffefe) padding-box,
-      linear-gradient(to top, rgb(var(--text-200),.9), rgb(var(--text-200), .5), rgb(var(--text-200), .8)) border-box;
-    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
-  .items:hover {    
-    border: 2px solid rgb(var(--black), 0.1);
-    box-shadow:
-      4px 4px 16px rgb(var(--text-200), 0.2),
-      -4px -4px 16px rgb(var(--text-200), 0.2);
+  li:hover {
+    background-color: rgb(var(--text-100), 0.03);
   }
-  .item {
+  article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 0.25rem;
     height: 100%;
   }
-  .item header h3 {
+  article header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 4px;
+  }
+  article header h3{
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-  }
-  .item header h3 a {
+    gap: 1rem;
+    border-left: 2px solid rgb(var(--text-100), 0.45);
+    padding-left: 8px;
     font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.05rem;
+    font-weight: 600;
     text-wrap: pretty;
-    color: rgb(var(--text-100), 0.9);
+    letter-spacing: -0.05rem;
+    color: rgb(var(--text-200), 0.85);
+    transition: all 0.3s ease-in-out;
   }
-  .item header h3 a:hover {
+  article header h3:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
   }
-  .item header h3 span {
+  article header h3 span {
     color: rgb(0, 188, 47, 1);
   }
-  .item header p {
+  article header h3 .github-code-link {
+    color: rgb(var(--text-100), 0.65);
+  }
+  article header h3 .github-code-link:hover {
+    color: rgb(var(--text-100), 0.85);
+  }
+  article header p {
     font-size: 12px;
     line-height: 1.4;
-    color: rgb(var(--text-100), 0.65);
+    color: rgb(var(--text-100), 0.45);
     text-wrap: pretty;
+    transition: all 0.3s ease-in-out;
   }
-  .item footer ul {
+  article footer ul {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
+    font-size: 10px;    
+    color: rgb(var(--secondary-100), 0.5);
   }
-  .item footer ul span {
-    font-size: 10px;
-    color: rgb(var(--text-200), 0.5);
-    background: rgb(var(--text-200), 0.1);
-    padding: 1px 3px;
+  article footer ul span {
+    background: rgb(var(--text-200), 0.08);
+    padding: 1px 4px;
     border-radius: 4px;
     width: fit-content;
-  }
-  .github-code-link {
-    color: rgb(var(--text-100),.55);
-    margin-left: 8px;
-  }
+  }  
 </style>

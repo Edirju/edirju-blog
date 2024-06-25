@@ -56,11 +56,24 @@ const posts = (await getCollection("blog")).sort(
     {
       posts.map((post) => (
         <li>
-          <a href={`/blog/${post.slug}/`}>
-            <img width={720} height={360} src={post.data.heroImage} alt="" />
-            <h4 class="title">{post.data.title}</h4>
-            <p class="date">
+          <a href={`/blog/${post.slug}/`} class="flex flex-col gap-1">
+            <p class="date text-xs italic text-[#1e252c60] text-pretty border-l-2 border-[#EC456860] pl-2">
               <FormattedDate date={post.data.pubDate} />
+            </p>
+            <img
+              width={720}
+              height={360}
+              src={post.data.heroImage}
+              alt={post.data.title}
+            />
+            <h3 class="text-base font-medium text-pretty text-[#1e252c] title">
+              {post.data.title}
+            </h3>
+            <p class="text-sm text-pretty text-[#1e252c55] description">
+              {post.data.description}
+            </p>
+            <p class="more text-sm tracking-wide text-[#EC4568] hover:font-bold">
+              Leer nota →
             </p>
           </a>
         </li>
@@ -72,20 +85,21 @@ const posts = (await getCollection("blog")).sort(
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
-
   li a img {
-    margin-bottom: 0.5rem;
-    border-radius: .5rem;
+    /* margin-bottom: 0.25rem; */
+    border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
   }
 
   li a img:hover {
-    box-shadow: 4px 4px 16px rgb(var(--text-100),.2), -4px -4px 16px rgb(var(--text-100), 0.25);
-    /* box-shadow: var(--box-shadow); */
+    box-shadow:
+      4px 4px 16px rgb(var(--text-100), 0.2),
+      -4px -4px 16px rgb(var(--text-100), 0.25);
   }
+  /*
 
   li h4 {
     font-size: 0.875rem;
@@ -96,7 +110,7 @@ const posts = (await getCollection("blog")).sort(
   li p {
     font-size: 0.75rem;
     color: rgb(var(--text-100), 0.55);
-  }
+  } */
 
   @media (width <= 700px) {
   }

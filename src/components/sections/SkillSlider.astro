@@ -48,7 +48,7 @@ import Astrojs from "@/icons/AstroIcon.astro";
     </p>
   </article>
 
-  <div class="stock-ticker shadow-[inset_-12px_-8px_40px_#46464620]">
+  <div class="stock-ticker shadow-[inset_-12px_-8px_40px_#4B639610]">
     <ul>
       <li class="minus">
         <Html5 class="w-4 h-4" />
@@ -272,8 +272,8 @@ import Astrojs from "@/icons/AstroIcon.astro";
     color: rgb(var(--black), 0.65);
     font-size: 12px;
     text-transform: uppercase;
-    padding-block: 8px;
-    border-block: 2px dotted rgb(var(--text-100), 0.2);
+    padding-block: 20px;
+    border-block: 2px dotted rgb(var(--text-100), 0.15);
     overflow: hidden;
     user-select: none;
 
@@ -284,7 +284,7 @@ import Astrojs from "@/icons/AstroIcon.astro";
     mask-image: linear-gradient(
       to right,
       transparent,
-      #000 10% 90%,
+      rgb(var(--text-100)) 10% 90%,
       transparent
     );
   }
@@ -314,8 +314,8 @@ import Astrojs from "@/icons/AstroIcon.astro";
     display: flex;
     items-align: center;
     justify-content: center;
-    gap: 4px;
-    padding: 4px;
+    gap: 8px;
+    padding: 8px;
   }
 
   .stock-ticker ul:first-child {
@@ -350,6 +350,6 @@ import Astrojs from "@/icons/AstroIcon.astro";
 
   .stock-ticker .minus,
   .stock-ticker .minus::before {
-    color: rgb(var(--accent-100));
+    color: rgb(var(--secondary-100));
   }
 </style>
