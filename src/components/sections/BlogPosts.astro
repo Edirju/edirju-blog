@@ -25,8 +25,8 @@ import FormattedDate from "../../components/FormattedDate.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-// const allPosts = await Astro.glob("@/pages/posts/*.md");
 ---
+
 <Section>
   <h2 class="section-title flex items-center gap-1">
     <News2 />Blog & Notas
@@ -36,17 +36,11 @@ const posts = (await getCollection("blog")).sort(
     <p>
       Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
       de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
-    </p>
-    <!-- <div class="box-left">
-      <a href="#" class="rss-btn">
-        <Rss class="h-3 w-3" />
-        <span>Suscríbete</span>
-      </a>
-    </div> -->
+    </p>    
   </article>
 
   <div class="container_posts">
-    <ul class="blog_post">      
+    <ul class="blog_post">
       {
         posts.map((post) => (
           <li>
@@ -54,6 +48,12 @@ const posts = (await getCollection("blog")).sort(
               <p class="date">
                 <FormattedDate date={post.data.pubDate} />
               </p>
+              {/* <img
+                width={700}
+                height={350}
+                src={post.data.heroImage}
+                alt={post.data.title}
+              /> */}
               <h4 class="title">{post.data.title}</h4>
               <p class="description">{post.data.description}</p>
               <p class="more">Leer nota →</p>
@@ -63,7 +63,7 @@ const posts = (await getCollection("blog")).sort(
       }
     </ul>
 
-    <ul class="social_post">      
+    <ul class="social_post">
       {
         posteos.map(({ network, title, description, url, date }) => {
           const Icon = SOCIAL_ICONS[network];
@@ -94,8 +94,7 @@ const posts = (await getCollection("blog")).sort(
     gap: 4px;
   }
   .blog_post,
-  .social_post {
-    /* border: 1px solid red; */
+  .social_post {    
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -103,8 +102,7 @@ const posts = (await getCollection("blog")).sort(
     height: fit-content;
   }
   .blog_post li,
-  .social_post li {
-    /* border: 1px solid blue; */
+  .social_post li {    
     padding: 8px 16px;
     border-radius: 8px;
   }
@@ -118,14 +116,13 @@ const posts = (await getCollection("blog")).sort(
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
+  }  
   .date {
     font-size: 12px;
     color: rgb(var(--dark), 0.5);
     text-wrap: pretty;
     border-left: 2px solid rgb(var(--text-200), 0.45);
     padding-left: 8px;
-
     display: flex;
     align-items: center;
     gap: 4px;
@@ -146,15 +143,8 @@ const posts = (await getCollection("blog")).sort(
     color: rgb(var(--secondary-100), 0.85);
     letter-spacing: 0.05em;
   }
-
+  
   @media (width <= 700px) {
-    /* ul {
-      flex-direction: row;
-      justify-content: center;
-    }
-    li {
-      width: 18.75rem;
-      height: 4.125rem;
-    } */
+    
   }
 </style>

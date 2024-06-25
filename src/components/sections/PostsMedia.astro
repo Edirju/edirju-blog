@@ -4,7 +4,6 @@ import News2 from "@/icons/News2.astro";
 import News from "@/icons/News.astro";
 import RightArrow from "@/icons/RightArrow.astro";
 import Filetextfill from "@/icons/Filetextfill.astro";
-
 import {
   Rss,
   X,
@@ -28,7 +27,6 @@ const SOCIAL_ICONS: Record<string, any> = {
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-import FormattedDate from "../FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -83,13 +81,6 @@ const posts = (await getCollection("blog")).sort(
   }
   
   @media (width <= 700px) {
-    /* ul {
-      flex-direction: row;
-      justify-content: center;
-    }
-    li {
-      width: 300px;
-      height: 66px;
-    } */
+    
   }
 </style>

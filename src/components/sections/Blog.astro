@@ -1,11 +1,7 @@
 ---
 import Section from "../Section.astro";
-
 import News2 from "@/icons/News2.astro";
 import News from "@/icons/News.astro";
-import RightArrow from "@/icons/RightArrow.astro";
-import Filetextfill from "@/icons/Filetextfill.astro";
-
 import {
   Rss,
   X,
@@ -93,25 +89,12 @@ const posts = (await getCollection("blog")).sort(
     border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
   }
-
   li a img:hover {
     box-shadow:
       4px 4px 16px rgb(var(--text-100), 0.2),
       -4px -4px 16px rgb(var(--text-100), 0.25);
   }
-  /*
-
-  li h4 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: rgb(var(--text-100), 0.9);
-  }
-
-  li p {
-    font-size: 0.75rem;
-    color: rgb(var(--text-100), 0.55);
-  } */
-
+  
   @media (width <= 700px) {
   }
 </style>

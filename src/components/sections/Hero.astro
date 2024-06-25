@@ -1,23 +1,13 @@
 ---
 import Section from "../Section.astro";
-
 import { basics } from "@landing";
 const { name, label, image, location, profiles, phone, email } = basics;
 const { city, region } = location;
-
 import { Github, Linkedin, X, Instagram, Threads } from "simple-icons-astro";
 import WorldMap from "@/icons/WorldMap.astro";
 import Mail from "@/icons/Mail.astro";
 import Phone from "@/icons/Phone.astro";
-
-const SOCIAL_ICONS: Record<string, any> = {
-  Github,
-  Linkedin,
-  X,
-  Instagram,
-  Threads,
-};
-
+const SOCIAL_ICONS: Record<string, any> = { Github, Linkedin, X, Instagram, Threads,};
 const linkedInfo = profiles.find(({ network }) => network === "Linkedin");
 const linkedUrl = linkedInfo?.url;
 const XInfo = profiles.find(({ network }) => network === "X");
@@ -28,16 +18,7 @@ const githubInfo = profiles.find(({ network }) => network === "Github");
 const githubUrl = githubInfo?.url;
 const threadsInfo = profiles.find(({ network }) => network === "Threads");
 const threadsUrl = threadsInfo?.url;
-
-const printInfo = [
-  email,
-  phone,
-  linkedUrl,
-  githubUrl,
-  XUrl,
-  instagramUrl,
-  threadsUrl,
-]
+const printInfo = [email, phone, linkedUrl, githubUrl, XUrl, instagramUrl, threadsUrl,]
   .filter(Boolean)
   .join(" • ");
 ---
@@ -49,8 +30,8 @@ const printInfo = [
     <div class="hero-info flex flex-col gap-4">
       <h1
         class="text-4xl font-black tracking-tighter text-pretty transition duration-300 ease-in-out hover:drop-shadow-lg"
-      >
-        Hola! Soy <span class="text-title-hero">Edinson Rivera</span>.
+      > 
+        Hola! Soy <span class="text-title-hero ">Edinson Rivera</span>.
       </h1>
 
       <h2 class="text-base font-light text-balance">
@@ -139,19 +120,16 @@ const printInfo = [
   .hero-info span {
     color: rgb(var(--text-100), 0.45);
   }
-
   .hero-image img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 330px;
   }
-
   footer {
     display: flex;
     gap: 0.5rem;
     font-size: 0.625rem;
   }
-
   footer a {
     color: rgb(var(--black), 0.5);
     display: inline-flex;
@@ -162,42 +140,34 @@ const printInfo = [
     padding: 0.25rem;
     height: 2rem;
     width: 2rem;
-
     transition: all 0.2s ease;
   }
-
   footer a:hover {
     background-color: rgb(var(--text-200), 0.05);
     border: 0.0625rem solid rgb(var(--text-200), 0.08);
     color: rgb(var(--text-200));
   }
-
   @media (width <= 43.75rem) {
     .hero-section {
       flex-direction: column-reverse;
     }
-
     .hero-info {
       justify-content: center;
       align-items: center;
       text-align: center;
     }
-
     .hero-info h1 {
       font-size: 2rem;
     }
-
     .hero-info h2 {
       text-wrap: balance;
     }
-
     .hero-image {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0 auto;
     }
-
     .hero-image img {
       width: 100%;
     }
