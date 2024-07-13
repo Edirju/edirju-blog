@@ -1,86 +1,47 @@
 ---
 import Section from "./Section.astro";
 import HeaderLink from "./HeaderLink.astro";
-import { Github, X, Instagram, Threads, Linkedin } from "simple-icons-astro";
 import Logo from "../icons/Logo.astro";
-import Home from "@/icons/Home-2.astro";
+import Data from "@/icons/Data.astro";
 import News from "@/icons/News.astro";
-import Briefcase from "@/icons/BriefCaseAlt.astro";
-import Download from "@/icons/DownLoad2.astro";
-
-import { SITE_TITLE } from "../consts";
 ---
 
 <Section>
-  <header class="" transition:animate="slide">
+  <header class="header" transition:animate="slide">
     <div
-      class="container mx-auto flex flex-wrap items-center py-4 flex-col md:flex-row"
+      class="container flex items-center justify-between py-4 md:flex-row flex-col mx-auto"
     >
-      <h2
-        class="title-font font-medium flex items-center mb-4 md:mb-0 text-[rgba(var(--text-100),.85)] hover:text-[rgba(var(--text-200),.95)]"
-      >
-        <!-- <img src="/perfil.svg" alt="Edinson Rivera" /> -->
-        <Logo />
-        <span class="text-2xl font-bold ml-2 tracking-tighter">Edirju.</span>
-      </h2>
+      <a href="/" class="logo">
+        <h2 class="flex items-center gap-1 font-bold mb-4 md:mb-0">
+          <Logo />
+          <span class="text-2xl font-bold"
+            >edirju<span class="text-[#00D8FF]">dev</span>
+          </span>
+        </h2>
+      </a>
 
       <nav
-        class="md:ml-auto md:mr-auto flex flex-wrap gap-4 items-center text-xs uppercase justify-center tracking-tighter"
-      >
-        <HeaderLink href="/"><Home />Inicio</HeaderLink>
+        class="navbar flex items-center gap-4 font-light text-sm uppercase tracking-tighter"
+      >        
         <HeaderLink href="/blog"><News />BlogPosts</HeaderLink>
-        <HeaderLink href="/projects"><Briefcase />Proyectos</HeaderLink>
+        <HeaderLink href="/projects"><Data />Proyectos</HeaderLink>
       </nav>
-
-      <div
-        class="social-links inline-flex items-center gap-2 border-0 py-1 px-3 focus:outline-none rounded mt-4 md:mt-0"
-      >
-        <a
-          href="https://www.linkedin.com/in/edinson-rivera-jurado/"
-          target="_blank"
-          class="hover:text-[rgba(var(--text-200),.95)]"
-          title="Visitar perfil en Linkedin"
-        >
-          <span class="sr-only">Follow Edinson on Linkedin</span>
-          <Linkedin />
-        </a>
-        <a
-          href="https://github.com/Edirju"
-          target="_blank"
-          class="hover:text-[rgba(var(--text-200),.95)]"
-          title="Visitar perfil de GitHub"
-        >
-          <span class="sr-only">Go to Edinson's GitHub repo</span>
-          <Github />
-        </a>
-        <a
-          href="/resume"
-          target="_blank"
-          class="hover:text-[rgba(var(--text-200),.95)]"
-          title="Ver Curriculum Vitae"
-        >
-          <span class="sr-only">Download Edinson's Resume</span>
-          <Download />
-        </a>
-      </div>
     </div>
   </header>
 </Section>
 
 <style>
-  nav {
-    border: 1px solid rgb(var(--light), 1);
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-image: linear-gradient(
-      to top right in oklab,
-      oklch(99.78% 0.001 17.18) 0%,
-      oklch(99.42% 0.006926120788662864 88.6411446312505) 100%
-    );    
-    box-shadow: var(--box-shadow);
-  } 
-
-  @media (width <= 700px) {
-
+  .header {
+    font-family: var(--font-heading);
+    color: rgb(var(--light), 1);
   }
+  .container {
+    border-bottom: 1px solid rgb(var(--light), 0.1);
+  }
+  .logo {
+    color: rgb(var(--light), 0.9);
+  }
+  .logo:hover {
+    text-shadow: 0 0 .5rem rgb(var(--accent-50), 0.15);
+  }  
 </style>

@@ -6,10 +6,32 @@ const { summary } = basics;
 ---
 
 <Section>
-  <h2 class="section-title flex items-center gap-1">
-    <User />Sobre mí
-  </h2>
-  <p class="text-pretty font-light text-sm">
-    {summary}
-  </p>  
+  <div class="area_section flex flex-col gap-2">
+    <h2 class="section-title flex items-center gap-2 font-bold tracking-wide text-pretty">
+      <User />Sobre mí
+    </h2>
+    <p class="parrafo leading-5 font-extralight text-pretty tracking-wide">
+      {summary}
+    </p>
+  </div>  
 </Section>
+
+<style>
+  .area_section {
+    background: rgb(var(--accent-60), 0.25);
+    color: rgb(var(--light), .9);
+    border-radius: 10px;
+    padding: 1rem;    
+  }
+  .area_section:hover{
+    background: rgb(var(--accent-60), 0.35);
+    box-shadow: var(--box-shadow);
+  }
+  .section-title {
+    font-size: clamp(18px, 1.5vw, 20px);
+  }
+  .parrafo {
+    font-family: var(--font-heading);
+    font-size: clamp(13px, 1.5vw, 14px);
+  }
+</style>

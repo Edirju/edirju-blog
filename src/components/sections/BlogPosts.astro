@@ -28,123 +28,121 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Section>
-  <h2 class="section-title flex items-center gap-1">
-    <News2 />Blog & Notas
-  </h2>
-
-  <article class="suscribe-container">
-    <p>
+  <div class="area_section flex flex-col gap-2">
+    <h2
+      class="section-title flex items-center gap-2 font-bold tracking-wide text-pretty"
+    >
+      <News2 />Blog & Notas
+    </h2>
+    <p class="parrafo leading-5 font-extralight text-pretty tracking-wide">
       Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
       de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
-    </p>    
-  </article>
+    </p>
 
-  <div class="container_posts">
-    <ul class="blog_post">
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}/`}>
-              <p class="date">
-                <FormattedDate date={post.data.pubDate} />
-              </p>
-              {/* <img
-                width={700}
-                height={350}
-                src={post.data.heroImage}
-                alt={post.data.title}
-              /> */}
-              <h4 class="title">{post.data.title}</h4>
-              <p class="description">{post.data.description}</p>
-              <p class="more">Leer nota →</p>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="container_posts">
+      <h3 class="subtitle">
+        Últimos posts
+      </h3>
 
-    <ul class="social_post">
-      {
-        posteos.map(({ network, title, description, url, date }) => {
-          const Icon = SOCIAL_ICONS[network];
-
-          return (
+      <ul class="blog_post">
+        {
+          posts.map((post) => (
             <li>
-              <a href={url}>
-                <p class="date">
-                  <Icon class="w-[14px] h-[14px]" />
-                  {date}
-                </p>
-                <h3 class="title">{title}</h3>
-                <p class="description">{description}</p>
-                <p class="more goto">Ir a post →</p>
+              <a 
+                href={`/blog/${post.slug}/`} 
+                class="posts"
+              >
+                <News class="w-4 h-4" />
+                <div>
+                  <h4 class="title">{post.data.title}</h4>
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </div>
+                {/* <p class="description">{post.data.description}</p> */}
+                {/* <p class="more">Leer nota →</p> */}
               </a>
             </li>
-          );
-        })
-      }
-    </ul>
+          ))
+        }
+      </ul>
+
+      <h3 class="subtitle">
+        Últimos posts en redes sociales
+      </h3>
+
+      <ul class="social_post">
+        {
+          posteos.map(({ network, title, description, url, date }) => {
+            return (
+              <li>
+                <a href={url} class="posts">
+                  <Rss class="w-[14px] h-[14px]" />
+                  <div>
+                    <h3 class="title">{title}</h3>
+                    <p class="date">{network}</p>
+                  </div>
+                  {/* <p class="description">{description}</p> */}
+                  {/* <p class="more goto">Ir a post →</p> */}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
   </div>
 </Section>
 
 <style>
-  .container_posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 4px;
+  .area_section {
+    color: rgb(var(--light), 0.9);
+    border-radius: 10px;
+    padding: 1rem;
   }
-  .blog_post,
-  .social_post {    
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    height: fit-content;
+  .section-title {
+    font-size: clamp(18px, 1.5vw, 20px);
   }
-  .blog_post li,
-  .social_post li {    
-    padding: 8px 16px;
-    border-radius: 8px;
+  .parrafo {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    color: rgb(var(--light), 0.55);
+    font-weight: 100;
+  }
+  .subtitle {
+    margin-block: 16px;
+    font-size: clamp(14px, 1.5vw, 16px);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    
   }
   li {
-    transition: all 0.3s ease-in-out;
-  }
-  li:hover {
-    background-color: rgb(var(--dark), 0.05);
-  }
-  li a {
     display: flex;
-    flex-direction: column;
+    gap: 16px;
+  }
+  .posts {
+    display: flex;
+    align-items: flex-start;
     gap: 8px;
-  }  
-  .date {
-    font-size: 12px;
-    color: rgb(var(--dark), 0.5);
-    text-wrap: pretty;
-    border-left: 2px solid rgb(var(--text-200), 0.45);
-    padding-left: 8px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    border-radius: 8px;
+    padding: 4px 8px;
+    width: 100%;
+  }
+  .posts:hover {
+    background-color: rgb(var(--accent-50), 1);
+    color: rgb(var(--dark), 1);
   }
   .title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgb(var(--dark), 0.75);
-  }
-  .description {
     font-size: 14px;
-    color: rgb(var(--dark), 0.45);
-    text-wrap: pretty;
+    font-weight: 500;
   }
-  .more {
-    font-size: 14px;
-    font-weight: bolder;
-    color: rgb(var(--secondary-100), 0.85);
-    letter-spacing: 0.05em;
+  .date {
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    
   }
   
   @media (width <= 700px) {
-    
   }
 </style>

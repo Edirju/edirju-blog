@@ -34,53 +34,74 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Section>
-  <h2 class="section-title flex items-center gap-1">
-    <Rss class="w-4 h-4" />Social Media Posts
-  </h2>
-
-  <ul>
-    {
-      posteos.map(({ network, title, description, url, date }) => {
-        const Icon = SOCIAL_ICONS[network];
-
-        return (
-          <li class="py-2 px-4 rounded-md">
-            <a href={url} class="flex flex-col gap-2">
-              <p class="date flex items-center gap-1 text-xs text-[#1e252c60] text-pretty border-l-2 border-[#004E9290] pl-2">
-                <Icon class="w-[14px] h-[14px]" />
-                {date}
-              </p>
-              <h3 class="title text-base font-semibold text-[#1e252c]">
-                {title}
-              </h3>
-              <p class="description text-sm text-pretty text-[#1e252c60]">
-                {description}
-              </p>
-              <p class="more text-sm tracking-wide text-[#EC4568] hover:font-bold">
-                Ir a post →
-              </p>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+  <div class="area_section flex flex-col gap-2">
+    <h2
+      class="section-title flex items-center gap-1 text-pretty mb-4 font-medium text-xl underline underline-offset-4"
+    >
+      <Rss class="w-4 h-4" />Social Media Posts
+    </h2>
+    <ul>
+      {
+        posteos.map(({ network, title, description, url, date }) => {
+          const Icon = SOCIAL_ICONS[network];
+          return (
+            <li class="p-4 rounded-md">
+              <a href={url} class="flex flex-col gap-1">
+                <p class="date flex items-center gap-2 text-pretty">
+                  <Icon class="w-4 h-4" />
+                  {date}
+                </p>
+                <h3 class="title text-pretty">
+                  {title}
+                </h3>
+                <p class="description text-pretty">
+                  {description}
+                </p>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
 </Section>
 
 <style>
+  .area_section {
+    background: rgb(var(--light), 0.85);
+    color: rgb(var(--dark), 0.85);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: .5rem;
   }
   li {
     transition: all 0.3s ease-in-out;
+    border: 1px solid rgb(var(--accent-50), 0.25);
   }
   li:hover {
-    background-color: rgb(var(--dark), 0.05);    
+    background-color: rgb(var(--accent-50), 0.05);
   }
-  
+  .date {
+    font-size: 10px;
+    color: rgb(var(--accent-60), 0.45);
+    font-family: var(--font-body);
+  }
+  .title {
+    font-size: clamp(13px, 1.5vw, 14px);
+    font-weight: 500;
+    color: rgb(var(--dark), 0.8);
+  }
+  .description {
+    font-size: 12px;
+    font-family: var(--font-body);
+    color: rgb(var(--dark), 0.5);
+  }
+
   @media (width <= 700px) {
-    
   }
 </style>

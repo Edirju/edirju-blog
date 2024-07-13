@@ -1,0 +1,270 @@
+---
+import Section from "../Section.astro";
+import { basics, projects } from "@cv";
+import {
+  Rss,
+  Github,
+  Html5,
+  Css3,
+  React,
+  Javascript,
+  Python,
+  Vite,
+} from "simple-icons-astro";
+import Circle from "@/icons/circle.astro";
+import AstroIcon from "@/icons/AstroIcon.astro";
+import Data from "@/icons/Data.astro";
+import ArrowRightTop from "@/icons/ArrowRightTop.astro";
+const SKILL_ICONS: Record<string, any> = {
+  Html5,
+  Css3,
+  React,
+  Javascript,
+  AstroIcon,
+  Vite,
+};
+---
+
+<Section>
+  <div class="container mx-auto area_section flex flex-col gap-2">
+    <div class="flex flex-col text-center w-full mb-20">
+      <p
+        class="parrafo leading-relaxed font-extralight text-pretty tracking-wide"
+      >
+        Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+        gentrify, subway tile poke farm-to-table. Franzen you probably haven't
+        heard of them man bun deep jianbing selfies heirloom.
+      </p>
+    </div>
+
+    <ul class="projects-container">
+      {
+        projects.map(
+          ({ url, description, highlights, name, isActive, github }) => {
+            return (
+              <li>
+                <article class="flex relative">
+                  <img
+                    alt="gallery"
+                    class="absolute inset-0 w-full h-full object-cover object-center"
+                    src="https://dummyimage.com/600x360"
+                  />
+                  <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                    <header>
+                      <h3 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1 flex items-center gap-2">
+                        <a
+                          href={url}
+                          title={`Ver el proyecto ${name}`}
+                          target="_blank"
+                        >
+                          {name}
+                        </a>
+                        {isActive && (
+                          <span>
+                            <Circle />
+                          </span>
+                        )}
+                        {github && (
+                          <a
+                            class="github-code-link"
+                            href={github}
+                            target="_blank"
+                            title={`Ver código fuente del proyecto ${name}`}
+                          >
+                            <Github class="w-4 h-4" />
+                          </a>
+                        )}
+                      </h3>
+                      <p class="leading-relaxed text-gray-900">{description}</p>
+                    </header>
+                    <footer>
+                      <ul>
+                        {highlights.map((highlight) => {
+                          return <span>{highlight}</span>;
+                        })}
+                      </ul>
+                    </footer>
+                  </div>
+                </article>
+              </li>
+            );
+          }
+        )
+      }
+
+      <!-- <li class="lg:w-1/3 sm:w-1/2 p-4">
+        <article class="flex relative">
+          <img
+            alt="gallery"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://dummyimage.com/600x360"
+          />
+          <div
+            class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+          >
+            <h2
+              class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+            >
+              THE SUBTITLE
+            </h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+              Shooting Stars
+            </h1>
+            <p class="leading-relaxed text-gray-900">
+              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+              microdosing tousled waistcoat.
+            </p>
+          </div>
+        </article>
+      </li> -->
+      <!-- <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img
+            alt="gallery"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://dummyimage.com/601x361"
+          />
+          <div
+            class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+          >
+            <h2
+              class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+            >
+              THE SUBTITLE
+            </h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+              The Catalyzer
+            </h1>
+            <p class="leading-relaxed">
+              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+              microdosing tousled waistcoat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img
+            alt="gallery"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://dummyimage.com/603x363"
+          />
+          <div
+            class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+          >
+            <h2
+              class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+            >
+              THE SUBTITLE
+            </h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+              The 400 Blows
+            </h1>
+            <p class="leading-relaxed">
+              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+              microdosing tousled waistcoat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img
+            alt="gallery"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://dummyimage.com/602x362"
+          />
+          <div
+            class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+          >
+            <h2
+              class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+            >
+              THE SUBTITLE
+            </h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+              Neptune
+            </h1>
+            <p class="leading-relaxed">
+              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+              microdosing tousled waistcoat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img
+            alt="gallery"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://dummyimage.com/605x365"
+          />
+          <div
+            class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+          >
+            <h2
+              class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+            >
+              THE SUBTITLE
+            </h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+              Holden Caulfield
+            </h1>
+            <p class="leading-relaxed">
+              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+              microdosing tousled waistcoat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img
+            alt="gallery"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://dummyimage.com/606x366"
+          />
+          <div
+            class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+          >
+            <h2
+              class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+            >
+              THE SUBTITLE
+            </h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+              Alper Kamu
+            </h1>
+            <p class="leading-relaxed">
+              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+              microdosing tousled waistcoat.
+            </p>
+          </div>
+        </div>
+      </div> -->
+    </ul>
+  </div>
+</Section>
+
+<style>
+  .area_section {
+    background: rgb(var(--accent-60), 0.25);
+    color: rgb(var(--light), 0.9);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .section-title {
+    font-size: clamp(18px, 1.5vw, 20px);
+  }
+  .parrafo {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    color: rgb(var(--light), 0.55);
+    font-weight: 100;
+  }
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+</style>

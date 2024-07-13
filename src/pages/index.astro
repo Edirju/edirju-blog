@@ -1,4 +1,6 @@
 ---
+// Supports weights 200-900
+import '@fontsource-variable/source-code-pro';
 import "@fontsource-variable/montserrat";
 import "@fontsource/lato";
 import Layout from "../layouts/BlogPost.astro";
@@ -10,6 +12,7 @@ import Hero from "@/components/sections/Hero.astro";
 import About from "@/components/sections/About.astro";
 import Skills from "@/components/sections/Skills.astro";
 import SkillSlider from "@/components/sections/SkillSlider.astro";
+import Projects from "@/components/sections/Projects.astro";
 import PostsMedia from "@/components/sections/PostsMedia.astro";
 import Blog from "@/components/sections/Blog.astro";
 import BlogPosts from "@/components/sections/BlogPosts.astro";
@@ -28,7 +31,9 @@ const { name, label } = basics;
     <Header />
     <Hero />
     <About />
+    <Skills />
     <SkillSlider />
+    <Projects />
     <!-- <Blog /> -->
     <!-- <PostsMedia /> -->
     <BlogPosts />

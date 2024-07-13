@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-
+import NoiseBackground from "@/components/NoiseBackground.astro";
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Section from "@/components/Section.astro";
@@ -13,7 +13,64 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
+<head>
+  <BaseHead title={title} description={description} />
+  <ViewTransitions />
+</head>
+
+<body>
+  <NoiseBackground />
+  <Header />
+  <Section>
+    <article>
+      <div class="hero-image mb-4">
+        {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+      </div>
+      <div class="prose">
+        <div class="title">
+          <div class="date text-center text-sm">
+            <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+          </div>
+          <h1 class="text-center text-3xl font-black tracking-tight mb-2">
+            {title}
+          </h1>
+          <hr />
+        </div>
+        <section class="prose">
+          <slot />
+        </section>
+      </div>
+    </article>
+  </Section>
+  <Footer />
+</body>
+
+<style>
+  .hero-image {
+    width: 100%;
+  }
+  .hero-image img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+  }
+  .title {
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1;
+    color: rgb(var(--light), 0.85);
+  }
+</style>
+<!-- <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
     <ViewTransitions />
@@ -60,11 +117,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       .last-updated-on {
         font-style: italic;
       }
-      .publication-content {
-        background: rgb(var(--light));
-        padding: 1em;
-        border-radius: 10px;
-      }
     </style>
   </head>
 
@@ -96,7 +148,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             </h1>
             <hr />
           </div>
-          <section class="publication-content"> 
+          <section class="prose">
             <slot />
           </section>
         </div>
@@ -109,4 +161,4 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       import "../scripts/main.js";
     </script>
   </body>
-</html>
+</html> -->

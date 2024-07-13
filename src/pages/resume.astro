@@ -49,7 +49,9 @@ const { name, label } = basics;
       box-sizing: border-box;
     }
     body {
-      min-height: 100vh;      
+      min-height: 100vh;
+      background: rgb(var(--light));
+      color: rgb(var(--dark));
     }
     input,
     button,
@@ -89,7 +91,7 @@ const { name, label } = basics;
     /*  BASE STYLES   */
     main {
       margin: 64px 0;
-      
+      font-family: var(--font-body);
     }
 
     @media (width <= 700px) {

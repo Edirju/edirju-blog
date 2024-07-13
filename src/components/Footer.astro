@@ -13,70 +13,81 @@ import {
 import Radar from "@/icons/Radar.astro";
 import { FOOTER } from "../consts";
 ---
+
 <Section>
-  <h2 class="section-title flex items-center gap-1">
-    <Radar /> Encuéntrame en:
-  </h2>
-
-  <footer>
-    <div class="flex flex-col items-center gap-1</div>">
-      <img src="/avatar.svg" alt="" class="w-12 h-12" />
-      <h3>
-        {FOOTER.name}
-        {FOOTER.span}
-        {FOOTER.role1}
-        {FOOTER.span}
-        {FOOTER.role2}
-      </h3>
-    </div>
-
-    <p>&copy; {today.getFullYear()} {FOOTER.alias}. {FOOTER.texto}</p>
-
-    <div class="social-links">
-      <a href="#" target="_blank">
-        <span class="sr-only">Ir a perfil de Linkedin</span>
-        <Linkedin />
-      </a>
-      <a href="https://github.com/withastro/astro" target="_blank">
-        <span class="sr-only">Go to Astro's GitHub repo</span>
-        <Github />
-      </a>
-      <a href="https://twitter.com/astrodotbuild" target="_blank">
-        <span class="sr-only">Follow Astro on Twitter</span>
-        <X />
-      </a>
-      <a href="https://m.webtoo.ls/@astro" target="_blank">
-        <span class="sr-only">Follow Astro on Mastodon</span>
-        <Mastodon />        
-      </a>
-      <a href="#" target="_blank">
-        <span class="sr-only">Ir a perfil de Instagram</span>
-        <Instagram />
-      </a>
-      <a href="#" target="_blank">
-        <span class="sr-only">Ir a perfil de Threads</span>
-        <Threads />
-      </a>
-      <a href="#" target="_blank">
-        <span class="sr-only">Ir a perfil de Threads</span>
-        <Facebook />
-      </a>
-    </div>
-  </footer>
+  <div class="area_section flex flex-col gap-2">
+    <h2
+      class="section-title flex items-center gap-2 font-bold tracking-wide text-pretty"
+    >
+      <Radar /> Encuéntrame en:
+    </h2>
+    <footer>
+      <div class="flex flex-col items-center gap-1</div>">
+        <img src="/avatar.svg" alt="" class="w-12 h-12" />
+        <h3>
+          {FOOTER.name}
+          {FOOTER.span}
+          {FOOTER.role1}
+          {FOOTER.span}
+          {FOOTER.role2}
+        </h3>
+      </div>
+      <p>&copy; {today.getFullYear()} {FOOTER.alias}. {FOOTER.texto}</p>
+      <div class="social-links">
+        <a href="#" target="_blank">
+          <span class="sr-only">Ir a perfil de Linkedin</span>
+          <Linkedin />
+        </a>
+        <a href="https://github.com/withastro/astro" target="_blank">
+          <span class="sr-only">Go to Astro's GitHub repo</span>
+          <Github />
+        </a>
+        <a href="https://twitter.com/astrodotbuild" target="_blank">
+          <span class="sr-only">Follow Astro on Twitter</span>
+          <X />
+        </a>
+        <a href="https://m.webtoo.ls/@astro" target="_blank">
+          <span class="sr-only">Follow Astro on Mastodon</span>
+          <Mastodon />
+        </a>
+        <a href="#" target="_blank">
+          <span class="sr-only">Ir a perfil de Instagram</span>
+          <Instagram />
+        </a>
+        <a href="#" target="_blank">
+          <span class="sr-only">Ir a perfil de Threads</span>
+          <Threads />
+        </a>
+        <a href="#" target="_blank">
+          <span class="sr-only">Ir a perfil de Threads</span>
+          <Facebook />
+        </a>
+      </div>
+    </footer>
+  </div>
 </Section>
 
 <style>
+  .area_section {
+    color: rgb(var(--light), 0.9);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .section-title {
+    font-size: clamp(18px, 1.5vw, 20px);
+  }
   footer {
     padding: 0em 1em 0em 1em;
     text-align: center;
   }
   h3 {
     font-size: 1rem;
-    letter-spacing: -0.05em;
-    color: rgb(var(--text-100),.85);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    color: rgb(var(--light), 0.65);
   }
   p {
-    color: rgb(var(--text-100), 0.4);
+    color: rgb(var(--accent-50), 0.25);
     font-size: 0.875rem;
   }
   .social-links {
@@ -87,13 +98,13 @@ import { FOOTER } from "../consts";
   }
   .social-links a {
     text-decoration: none;
-    color: rgb(var(--text-100), 0.8);
+    color: rgb(var(--light), 0.8);
     transition-property: transform, color;
     transition-duration: 0.3s, 0.5s;
     transition-delay: 0s, 0.1s;
   }
   .social-links a:hover {
-    color: rgb(var(--text-200));
-    transform: scale(1.2) rotate(360deg);    
+    color: rgb(var(--accent-50),.9);
+    transform: scale(1.2) rotate(360deg);
   }
 </style>

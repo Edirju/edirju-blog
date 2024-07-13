@@ -1,6 +1,6 @@
 ---
 import Section from "../Section.astro";
-import Briefcase from "@/icons/BriefCaseAlt.astro";
+import Cog from "@/icons/Cog.astro";
 import {
   Bootstrap,
   Css3,
@@ -33,248 +33,259 @@ import {
   Canva,
 } from "simple-icons-astro";
 import Astrojs from "@/icons/AstroIcon.astro";
-
 ---
 
 <Section>
-  <h2 class="section-title flex items-center gap-1">
-    <Briefcase /> Habilidades
-  </h2>
-
-  <article class="suscribe-container">
-    <p>
+  <div class="area_section flex flex-col gap-2">
+    <h2
+      class="section-title flex items-center gap-2 font-bold tracking-wide text-pretty"
+    >
+      <Cog /> Habilidades
+    </h2>
+    <p class="parrafo leading-5 font-extralight text-pretty tracking-wide">
       Tengo la inquietante necesidad de construir cosas. A veces el trabajo
       fluye con facilidad, otras veces me cuestiono mis decisiones. E pluribus
       unum.
     </p>
-  </article>
 
-  <div class="stock-ticker shadow-[inset_-12px_-8px_40px_#4B639610]">
-    <ul>
-      <li class="minus">
-        <Html5 class="w-4 h-4" />
-        <span class="company">HTML</span>
-      </li>
-      <li class="minus">
-        <Css3 class="w-4 h-4" />
-        <span class="company">CSS</span>
-      </li>
-      <li class="minus">
-        <Javascript class="w-4 h-4" />
-        <span class="company">Javascript</span>
-      </li>
-      <li class="minus">
-        <Python class="w-4 h-4" />
-        <span class="company">Python</span>
-      </li>
-      <li class="minus">
-        <React class="w-4 h-4" />
-        <span class="company">React</span>
-      </li>
-      <li class="minus">
-        <Astrojs class="w-4 h-4" />
-        <span class="company">Astro</span>
-      </li>
-      <li class="minus">
-        <Nextdotjs class="w-4 h-4" />
-        <span class="company">Next.js</span>
-      </li>
-      <li class="minus">
-        <Nodedotjs class="w-4 h-4" />
-        <span class="company">Node.js</span>
-      </li>
-      <li class="minus">
-        <Tailwindcss class="w-4 h-4" />
-        <span class="company">Tailwind</span>
-      </li>
-      <li class="minus">
-        <Typescript class="w-4 h-4" />
-        <span class="company">Typescript</span>
-      </li>
-      <li class="minus">
-        <Mysql class="w-4 h-4" />
-        <span class="company">MySql</span>
-      </li>
-      <li class="minus">
-        <Git class="w-4 h-4" />
-        <span class="company">Git</span>
-      </li>
-      <li class="minus">
-        <Github class="w-4 h-4" />
-        <span class="company">Github</span>
-      </li>
-      <li class="minus">
-        <Bootstrap class="w-4 h-4" />
-        <span class="company">Bootstrap</span>
-      </li>
-      <li class="minus">
-        <Vite class="w-4 h-4" />
-        <span class="company">Vite</span>
-      </li>
-      <li class="minus">
-        <Slack class="w-4 h-4" />
-        <span class="company">Slack</span>
-      </li>
-
-      <li class="plus">
-        <Figma class="w-4 h-4" />
-        <span class="company">Figma</span>
-      </li>
-      <li class="plus">
-        <Notion class="w-4 h-4" />
-        <span class="company">Notion</span>
-      </li>
-      <li class="plus">
-        <Hubspot class="w-4 h-4" />
-        <span class="company">Hubspot</span>
-      </li>
-      <li class="plus">
-        <Gumroad class="w-4 h-4" />
-        <span class="company">Gumroad</span>
-      </li>
-      <li class="plus">
-        <Googleads class="w-4 h-4" />
-        <span class="company">Google Ads</span>
-      </li>
-      <li class="plus">
-        <Googleanalytics class="w-4 h-4" />
-        <span class="company">Analytics</span>
-      </li>
-      <li class="plus">
-        <Meta class="w-4 h-4" />
-        <span class="company">Meta</span>
-      </li>
-      <li class="plus">
-        <Googlegemini class="w-4 h-4" />
-        <span class="company">Gemini</span>
-      </li>
-      <li class="plus">
-        <Openai class="w-4 h-4" />
-        <span class="company">ChatGPT</span>
-      </li>
-      <li class="plus">
-        <Blogger class="w-4 h-4" />
-        <span class="company">Blogger</span>
-      </li>
-    </ul>
-
-    <ul aria-hidden="true">
-      <li class="minus">
-        <Html5 class="w-4 h-4" />
-        <span class="company">HTML</span>
-      </li>
-      <li class="minus">
-        <Css3 class="w-4 h-4" />
-        <span class="company">CSS</span>
-      </li>
-      <li class="minus">
-        <Javascript class="w-4 h-4" />
-        <span class="company">Javascript</span>
-      </li>
-      <li class="minus">
-        <Python class="w-4 h-4" />
-        <span class="company">Python</span>
-      </li>
-      <li class="minus">
-        <React class="w-4 h-4" />
-        <span class="company">React</span>
-      </li>
-      <li class="minus">
-        <Astrojs class="w-4 h-4" />
-        <span class="company">Astro</span>
-      </li>
-      <li class="minus">
-        <Nextdotjs class="w-4 h-4" />
-        <span class="company">Next.js</span>
-      </li>
-      <li class="minus">
-        <Nodedotjs class="w-4 h-4" />
-        <span class="company">Node.js</span>
-      </li>
-      <li class="minus">
-        <Tailwindcss class="w-4 h-4" />
-        <span class="company">Tailwind</span>
-      </li>
-      <li class="minus">
-        <Typescript class="w-4 h-4" />
-        <span class="company">Typescript</span>
-      </li>
-      <li class="minus">
-        <Mysql class="w-4 h-4" />
-        <span class="company">MySql</span>
-      </li>
-      <li class="minus">
-        <Git class="w-4 h-4" />
-        <span class="company">Git</span>
-      </li>
-      <li class="minus">
-        <Github class="w-4 h-4" />
-        <span class="company">Github</span>
-      </li>
-      <li class="minus">
-        <Bootstrap class="w-4 h-4" />
-        <span class="company">Bootstrap</span>
-      </li>
-      <li class="minus">
-        <Vite class="w-4 h-4" />
-        <span class="company">Vite</span>
-      </li>
-      <li class="minus">
-        <Slack class="w-4 h-4" />
-        <span class="company">Slack</span>
-      </li>
-      <li class="plus">
-        <Figma class="w-4 h-4" />
-        <span class="company">Figma</span>
-      </li>
-      <li class="plus">
-        <Notion class="w-4 h-4" />
-        <span class="company">Notion</span>
-      </li>
-      <li class="plus">
-        <Hubspot class="w-4 h-4" />
-        <span class="company">Hubspot</span>
-      </li>
-      <li class="plus">
-        <Gumroad class="w-4 h-4" />
-        <span class="company">Gumroad</span>
-      </li>
-      <li class="plus">
-        <Googleads class="w-4 h-4" />
-        <span class="company">Google Ads</span>
-      </li>
-      <li class="plus">
-        <Googleanalytics class="w-4 h-4" />
-        <span class="company">Analytics</span>
-      </li>
-      <li class="plus">
-        <Meta class="w-4 h-4" />
-        <span class="company">Meta</span>
-      </li>
-      <li class="plus">
-        <Googlegemini class="w-4 h-4" />
-        <span class="company">Gemini</span>
-      </li>
-      <li class="plus">
-        <Openai class="w-4 h-4" />
-        <span class="company">ChatGPT</span>
-      </li>
-      <li class="plus">
-        <Blogger class="w-4 h-4" />
-        <span class="company">Blogger</span>
-      </li>
-    </ul>
+    <div class="stock-ticker shadow-[inset_-12px_-8px_40px_#4B639610]">
+      <ul>
+        <li class="minus">
+          <Html5 class="w-4 h-4" />
+          <span class="company">HTML</span>
+        </li>
+        <li class="minus">
+          <Css3 class="w-4 h-4" />
+          <span class="company">CSS</span>
+        </li>
+        <li class="minus">
+          <Javascript class="w-4 h-4" />
+          <span class="company">Javascript</span>
+        </li>
+        <li class="minus">
+          <Python class="w-4 h-4" />
+          <span class="company">Python</span>
+        </li>
+        <li class="minus">
+          <React class="w-4 h-4" />
+          <span class="company">React</span>
+        </li>
+        <li class="minus">
+          <Astrojs class="w-4 h-4" />
+          <span class="company">Astro</span>
+        </li>
+        <li class="minus">
+          <Nextdotjs class="w-4 h-4" />
+          <span class="company">Next.js</span>
+        </li>
+        <li class="minus">
+          <Nodedotjs class="w-4 h-4" />
+          <span class="company">Node.js</span>
+        </li>
+        <li class="minus">
+          <Tailwindcss class="w-4 h-4" />
+          <span class="company">Tailwind</span>
+        </li>
+        <li class="minus">
+          <Typescript class="w-4 h-4" />
+          <span class="company">Typescript</span>
+        </li>
+        <li class="minus">
+          <Mysql class="w-4 h-4" />
+          <span class="company">MySql</span>
+        </li>
+        <li class="minus">
+          <Git class="w-4 h-4" />
+          <span class="company">Git</span>
+        </li>
+        <li class="minus">
+          <Github class="w-4 h-4" />
+          <span class="company">Github</span>
+        </li>
+        <li class="minus">
+          <Bootstrap class="w-4 h-4" />
+          <span class="company">Bootstrap</span>
+        </li>
+        <li class="minus">
+          <Vite class="w-4 h-4" />
+          <span class="company">Vite</span>
+        </li>
+        <li class="minus">
+          <Slack class="w-4 h-4" />
+          <span class="company">Slack</span>
+        </li>
+        <li class="plus">
+          <Figma class="w-4 h-4" />
+          <span class="company">Figma</span>
+        </li>
+        <li class="plus">
+          <Notion class="w-4 h-4" />
+          <span class="company">Notion</span>
+        </li>
+        <li class="plus">
+          <Hubspot class="w-4 h-4" />
+          <span class="company">Hubspot</span>
+        </li>
+        <li class="plus">
+          <Gumroad class="w-4 h-4" />
+          <span class="company">Gumroad</span>
+        </li>
+        <li class="plus">
+          <Googleads class="w-4 h-4" />
+          <span class="company">Google Ads</span>
+        </li>
+        <li class="plus">
+          <Googleanalytics class="w-4 h-4" />
+          <span class="company">Analytics</span>
+        </li>
+        <li class="plus">
+          <Meta class="w-4 h-4" />
+          <span class="company">Meta</span>
+        </li>
+        <li class="plus">
+          <Googlegemini class="w-4 h-4" />
+          <span class="company">Gemini</span>
+        </li>
+        <li class="plus">
+          <Openai class="w-4 h-4" />
+          <span class="company">ChatGPT</span>
+        </li>
+        <li class="plus">
+          <Blogger class="w-4 h-4" />
+          <span class="company">Blogger</span>
+        </li>
+      </ul>
+      <ul aria-hidden="true">
+        <li class="minus">
+          <Html5 class="w-4 h-4" />
+          <span class="company">HTML</span>
+        </li>
+        <li class="minus">
+          <Css3 class="w-4 h-4" />
+          <span class="company">CSS</span>
+        </li>
+        <li class="minus">
+          <Javascript class="w-4 h-4" />
+          <span class="company">Javascript</span>
+        </li>
+        <li class="minus">
+          <Python class="w-4 h-4" />
+          <span class="company">Python</span>
+        </li>
+        <li class="minus">
+          <React class="w-4 h-4" />
+          <span class="company">React</span>
+        </li>
+        <li class="minus">
+          <Astrojs class="w-4 h-4" />
+          <span class="company">Astro</span>
+        </li>
+        <li class="minus">
+          <Nextdotjs class="w-4 h-4" />
+          <span class="company">Next.js</span>
+        </li>
+        <li class="minus">
+          <Nodedotjs class="w-4 h-4" />
+          <span class="company">Node.js</span>
+        </li>
+        <li class="minus">
+          <Tailwindcss class="w-4 h-4" />
+          <span class="company">Tailwind</span>
+        </li>
+        <li class="minus">
+          <Typescript class="w-4 h-4" />
+          <span class="company">Typescript</span>
+        </li>
+        <li class="minus">
+          <Mysql class="w-4 h-4" />
+          <span class="company">MySql</span>
+        </li>
+        <li class="minus">
+          <Git class="w-4 h-4" />
+          <span class="company">Git</span>
+        </li>
+        <li class="minus">
+          <Github class="w-4 h-4" />
+          <span class="company">Github</span>
+        </li>
+        <li class="minus">
+          <Bootstrap class="w-4 h-4" />
+          <span class="company">Bootstrap</span>
+        </li>
+        <li class="minus">
+          <Vite class="w-4 h-4" />
+          <span class="company">Vite</span>
+        </li>
+        <li class="minus">
+          <Slack class="w-4 h-4" />
+          <span class="company">Slack</span>
+        </li>
+        <li class="plus">
+          <Figma class="w-4 h-4" />
+          <span class="company">Figma</span>
+        </li>
+        <li class="plus">
+          <Notion class="w-4 h-4" />
+          <span class="company">Notion</span>
+        </li>
+        <li class="plus">
+          <Hubspot class="w-4 h-4" />
+          <span class="company">Hubspot</span>
+        </li>
+        <li class="plus">
+          <Gumroad class="w-4 h-4" />
+          <span class="company">Gumroad</span>
+        </li>
+        <li class="plus">
+          <Googleads class="w-4 h-4" />
+          <span class="company">Google Ads</span>
+        </li>
+        <li class="plus">
+          <Googleanalytics class="w-4 h-4" />
+          <span class="company">Analytics</span>
+        </li>
+        <li class="plus">
+          <Meta class="w-4 h-4" />
+          <span class="company">Meta</span>
+        </li>
+        <li class="plus">
+          <Googlegemini class="w-4 h-4" />
+          <span class="company">Gemini</span>
+        </li>
+        <li class="plus">
+          <Openai class="w-4 h-4" />
+          <span class="company">ChatGPT</span>
+        </li>
+        <li class="plus">
+          <Blogger class="w-4 h-4" />
+          <span class="company">Blogger</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </Section>
 
 <style>
-  .stock-ticker {
-    font-family: var(--heading-font);
-    color: rgb(var(--black), 0.65);
+  .area_section {
+    color: rgb(var(--light), 0.9);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .section-title {
+    font-size: clamp(18px, 1.5vw, 20px);
+  }
+  .parrafo {
+    font-family: var(--font-heading);
     font-size: 12px;
+    color: rgb(var(--light), 0.55);
+    font-weight: 100;
+  }
+  .stock-ticker {
+    font-family: var(--font-heading);
+    color: rgb(var(--light), 0.65);
+    font-size: 14px;
     text-transform: uppercase;
-    padding-block: 20px;
-    /* border-block: 1px solid rgb(var(--text-100), 0.08); */
+    padding-block: 20px;    
     overflow: hidden;
     user-select: none;
 
@@ -285,7 +296,7 @@ import Astrojs from "@/icons/AstroIcon.astro";
     mask-image: linear-gradient(
       to right,
       transparent,
-      rgb(var(--text-400)) 10% 90%,
+      rgb(var(--dark)) 10% 90%,
       transparent
     );
   }
@@ -297,8 +308,9 @@ import Astrojs from "@/icons/AstroIcon.astro";
     justify-content: space-between;
     align-items: center;
     gap: var(--gap);
+    
 
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
   }
   .stock-ticker:hover ul {
     animation-play-state: paused;
@@ -313,7 +325,10 @@ import Astrojs from "@/icons/AstroIcon.astro";
     items-align: center;
     justify-content: center;
     gap: 8px;
-    padding: 8px;
+    padding: 8px 16px;
+    border: 1px solid rgb(var(--accent-50), 0.1);
+    border-radius: 10px;
+    background-color: rgb(var(--accent-60), 0.25);
   }
   .stock-ticker ul:first-child {
     /* background-color: yellow; */
@@ -336,10 +351,10 @@ import Astrojs from "@/icons/AstroIcon.astro";
   } */
   .stock-ticker .plus,
   .stock-ticker .plus::before {
-    color: rgb(var(--text-200));
+    color: rgb(var(--accent-55));
   }
   .stock-ticker .minus,
   .stock-ticker .minus::before {
-    color: rgb(var(--secondary-100));
+    color: rgb(var(--accent-50));
   }
 </style>

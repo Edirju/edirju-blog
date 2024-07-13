@@ -90,31 +90,27 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 </Section>
 
 <style>
-  .hero-container {
-    /* border: 1px solid rebeccapurple; */
+  .hero-container {    
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
   }
-
   .hero-info {
     display: flex;
     flex-direction: column;
   }
-
   h1 {
     font-size: 24px;
     font-weight: 700;
   }
-
   h2 {
     font-size: 14px;
     font-weight: 400;
     text-wrap: balance;
     color: rgb(68, 68, 68, 1);
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-body);
   }
 
   img {
