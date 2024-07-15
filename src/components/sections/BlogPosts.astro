@@ -1,25 +1,9 @@
 ---
 import Section from "../Section.astro";
 import News2 from "@/icons/News2.astro";
-import News from "@/icons/News.astro";
-import {
-  Rss,
-  X,
-  Linkedin,
-  Threads,
-  Facebook,
-  Instagram,
-} from "simple-icons-astro";
+import File from "@/icons/File.astro";
+import { Rss } from "simple-icons-astro";
 import { posteos } from "@social";
-const SOCIAL_ICONS: Record<string, any> = {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Threads,
-  X,
-  News,
-};
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 const posts = (await getCollection("blog")).sort(
@@ -32,7 +16,7 @@ const posts = (await getCollection("blog")).sort(
     <h2
       class="section-title flex items-center gap-2 font-bold tracking-wide text-pretty"
     >
-      <News2 />Blog & Notas
+      <News2 />Blog | Social Media Posts
     </h2>
     <p class="parrafo leading-5 font-extralight text-pretty tracking-wide">
       Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
@@ -40,50 +24,39 @@ const posts = (await getCollection("blog")).sort(
     </p>
 
     <div class="container_posts">
-      <h3 class="subtitle">
-        Últimos posts
-      </h3>
+      <h3 class="subtitle">Últimos posts</h3>
 
       <ul class="blog_post">
         {
           posts.map((post) => (
             <li>
-              <a 
-                href={`/blog/${post.slug}/`} 
-                class="posts"
-              >
-                <News class="w-4 h-4" />
-                <div>
+              <a href={`/blog/${post.slug}/`} class="posts">
+                <File class="w-5 h-5" />
+                <div class="noticias">
                   <h4 class="title">{post.data.title}</h4>
-                  <p class="date">
+                  <p class="date tracking-wide text-balance">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
-                </div>
-                {/* <p class="description">{post.data.description}</p> */}
-                {/* <p class="more">Leer nota →</p> */}
+                </div>                
               </a>
             </li>
           ))
         }
       </ul>
 
-      <h3 class="subtitle">
-        Últimos posts en redes sociales
-      </h3>
+      <h3 class="subtitle">Últimos posts en redes sociales</h3>
 
       <ul class="social_post">
         {
           posteos.map(({ network, title, description, url, date }) => {
             return (
               <li>
-                <a href={url} class="posts">
-                  <Rss class="w-[14px] h-[14px]" />
-                  <div>
+                <a href={url} class="posts flex items-center">
+                  <Rss class="w-4 h-4" />
+                  <div class="noticias">
                     <h3 class="title">{title}</h3>
                     <p class="date">{network}</p>
-                  </div>
-                  {/* <p class="description">{description}</p> */}
-                  {/* <p class="more goto">Ir a post →</p> */}
+                  </div>                  
                 </a>
               </li>
             );
@@ -101,7 +74,7 @@ const posts = (await getCollection("blog")).sort(
     padding: 1rem;
   }
   .section-title {
-    font-size: clamp(18px, 1.5vw, 20px);
+    font-size: clamp(16px, 1.5vw, 20px);
   }
   .parrafo {
     font-family: var(--font-heading);
@@ -114,7 +87,6 @@ const posts = (await getCollection("blog")).sort(
     font-size: clamp(14px, 1.5vw, 16px);
     text-decoration: underline;
     text-underline-offset: 6px;
-    
   }
   li {
     display: flex;
@@ -122,7 +94,7 @@ const posts = (await getCollection("blog")).sort(
   }
   .posts {
     display: flex;
-    align-items: flex-start;
+    align-content: center;
     gap: 8px;
     border-radius: 8px;
     padding: 4px 8px;
@@ -132,17 +104,21 @@ const posts = (await getCollection("blog")).sort(
     background-color: rgb(var(--accent-50), 1);
     color: rgb(var(--dark), 1);
   }
+  .noticias {
+    border-left: 1px solid rgb(var(--light), 0.25);
+    padding-left: 8px;
+  }
   .title {
     font-size: 14px;
     font-weight: 500;
   }
   .date {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
     font-style: italic;
-    
+    font-family: var(--font-body);
   }
-  
+
   @media (width <= 700px) {
   }
 </style>
