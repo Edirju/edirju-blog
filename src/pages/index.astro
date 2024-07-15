@@ -3,18 +3,14 @@
 import '@fontsource-variable/source-code-pro';
 import "@fontsource-variable/montserrat";
 import "@fontsource/lato";
-import Layout from "../layouts/BlogPost.astro";
 import BaseHead from "../components/BaseHead.astro";
 import NoiseBackground from "@/components/NoiseBackground.astro";
-import Section from "../components/Section.astro";
 import Header from "../components/Header.astro";
 import Hero from "@/components/sections/Hero.astro";
 import About from "@/components/sections/About.astro";
 import Skills from "@/components/sections/Skills.astro";
 import SkillSlider from "@/components/sections/SkillSlider.astro";
 import Projects from "@/components/sections/Projects.astro";
-import PostsMedia from "@/components/sections/PostsMedia.astro";
-import Blog from "@/components/sections/Blog.astro";
 import BlogPosts from "@/components/sections/BlogPosts.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
@@ -33,9 +29,7 @@ const { name, label } = basics;
     <About />
     <Skills />
     <SkillSlider />
-    <Projects />
-    <!-- <Blog /> -->
-    <!-- <PostsMedia /> -->
+    <Projects />    
     <BlogPosts />
     <Footer />
   </body>

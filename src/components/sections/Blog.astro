@@ -35,49 +35,7 @@ const posts = (await getCollection("blog")).sort(
       Posts publicados  
     </h2>  
   </div>  
-
-
-  <!-- <h2 class="section-title flex items-center gap-1">
-    <News2 />Posts publicados
-  </h2>
-
-  <article class="suscribe-container">
-    <p>
-      Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
-      de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
-    </p>
-
-    
-  </article>
-
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}/`} class="flex flex-col gap-1">
-            <p class="date text-xs italic text-[#1e252c60] text-pretty border-l-2 border-[#EC456860] pl-2">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-            <img
-              width={720}
-              height={360}
-              src={post.data.heroImage}
-              alt={post.data.title}
-            />
-            <h3 class="text-base font-medium text-pretty text-[#1e252c] title">
-              {post.data.title}
-            </h3>
-            <p class="text-sm text-pretty text-[#1e252c55] description">
-              {post.data.description}
-            </p>
-            <p class="more text-sm tracking-wide text-[#EC4568] hover:font-bold">
-              Leer nota →
-            </p>
-          </a>
-        </li>
-      ))
-    }
-  </ul> -->
+  
 </Section>
 
 <style>
