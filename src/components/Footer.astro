@@ -34,32 +34,35 @@ import { FOOTER } from "../consts";
       </div>
       <p>&copy; {today.getFullYear()} {FOOTER.alias}. {FOOTER.texto}</p>
       <div class="social-links">
-        <a href="#" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/edinson-rivera-jurado-65187927/"
+          target="_blank"
+        >
           <span class="sr-only">Ir a perfil de Linkedin</span>
           <Linkedin />
         </a>
-        <a href="https://github.com/withastro/astro" target="_blank">
+        <a href="https://github.com/Edirju" target="_blank">
           <span class="sr-only">Go to Astro's GitHub repo</span>
           <Github />
         </a>
-        <a href="https://twitter.com/astrodotbuild" target="_blank">
+        <a href="https://twitter.com/edinson_rivera" target="_blank">
           <span class="sr-only">Follow Astro on Twitter</span>
           <X />
         </a>
-        <a href="https://m.webtoo.ls/@astro" target="_blank">
+        <a href="https://mastodon.social/@edirju" target="_blank">
           <span class="sr-only">Follow Astro on Mastodon</span>
           <Mastodon />
         </a>
-        <a href="#" target="_blank">
+        <a href="https://www.instagram.com/edirju/" target="_blank">
           <span class="sr-only">Ir a perfil de Instagram</span>
           <Instagram />
         </a>
-        <a href="#" target="_blank">
+        <a href="https://www.threads.net/@edirju" target="_blank">
           <span class="sr-only">Ir a perfil de Threads</span>
           <Threads />
         </a>
-        <a href="#" target="_blank">
-          <span class="sr-only">Ir a perfil de Threads</span>
+        <a href="https://www.facebook.com/edirjudev" target="_blank">
+          <span class="sr-only">Ir a perfil de Facebook</span>
           <Facebook />
         </a>
       </div>
@@ -84,10 +87,10 @@ import { FOOTER } from "../consts";
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: -0.025em;
-    color: rgb(var(--light), 0.65);
+    color: rgb(var(--light), 0.8);
   }
   p {
-    color: rgb(var(--accent-50), 0.25);
+    color: rgb(var(--light), 0.4);
     font-size: 0.875rem;
   }
   .social-links {
@@ -98,13 +101,13 @@ import { FOOTER } from "../consts";
   }
   .social-links a {
     text-decoration: none;
-    color: rgb(var(--light), 0.8);
+    color: rgb(var(--light), 0.75);
     transition-property: transform, color;
     transition-duration: 0.3s, 0.5s;
     transition-delay: 0s, 0.1s;
   }
   .social-links a:hover {
-    color: rgb(var(--accent-50),.9);
+    color: rgb(var(--accent-50), 1);
     transform: scale(1.2) rotate(360deg);
   }
 </style>
