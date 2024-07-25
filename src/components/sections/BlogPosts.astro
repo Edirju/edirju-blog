@@ -16,34 +16,32 @@ const posts = (await getCollection("blog")).sort(
     <h2
       class="section-title flex items-center gap-2 font-bold tracking-wide text-pretty"
     >
-      <News2 />Blog | Social Media Posts
+      <News2 />Blog | Posts publicados
     </h2>
     <p class="parrafo leading-5 font-extralight text-pretty tracking-wide">
       Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
       de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
     </p>
 
-    <div class="container_posts">
-      <h3 class="subtitle">Últimos posts</h3>
+    <ul class="blog_post">
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}/`} class="posts">
+              <File class="w-5 h-5" />
+              <div class="noticias">
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date tracking-wide text-balance">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
 
-      <ul class="blog_post">
-        {
-          posts.map((post) => (
-            <li>
-              <a href={`/blog/${post.slug}/`} class="posts">
-                <File class="w-5 h-5" />
-                <div class="noticias">
-                  <h4 class="title">{post.data.title}</h4>
-                  <p class="date tracking-wide text-balance">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
-                </div>                
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-
+    <!-- <div class="container_posts">
       <h3 class="subtitle">Últimos posts en redes sociales</h3>
 
       <ul class="social_post">
@@ -63,24 +61,25 @@ const posts = (await getCollection("blog")).sort(
           })
         }
       </ul>
-    </div>
+    </div> -->
   </div>
 </Section>
 
 <style>
   .area_section {
-    color: rgb(var(--light), 0.9);
+    color: rgb(var(--dark), 0.9);
     border-radius: 10px;
     padding: 1rem;
+    gap: 16px;
   }
   .section-title {
     font-size: clamp(16px, 1.5vw, 20px);
   }
   .parrafo {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 12px;
-    color: rgb(var(--light), 0.55);
-    font-weight: 100;
+    color: rgb(var(--dark), 0.65);
+    font-weight: 300;
   }
   .subtitle {
     margin-block: 16px;
@@ -88,34 +87,34 @@ const posts = (await getCollection("blog")).sort(
     text-decoration: underline;
     text-underline-offset: 6px;
   }
-  li {
+  .blog_post {
     display: flex;
+    flex-direction: column;
     gap: 16px;
-  }
+  }  
   .posts {
     display: flex;
     align-content: center;
-    gap: 8px;
+    gap: .5rem;
     border-radius: 8px;
     padding: 4px 8px;
     width: 100%;
   }
   .posts:hover {
-    background-color: rgb(var(--accent-50), 1);
-    color: rgb(var(--dark), 1);
+    background-color: rgb(var(--accent-50), .8);
+    color: rgb(var(--dark), .9);
   }
   .noticias {
-    border-left: 1px solid rgb(var(--light), 0.25);
+    border-left: 1px solid rgb(var(--dark), 0.15);
     padding-left: 8px;
   }
   .title {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
   }
   .date {
     font-size: 12px;
-    font-weight: 300;
-    font-style: italic;
+    font-weight: 300;    
     font-family: var(--font-body);
   }
 

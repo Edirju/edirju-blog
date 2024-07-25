@@ -40,31 +40,21 @@ const printInfo = [
 ---
 
 <Section>
-  <article
-    class="hero-section flex items-center mx-auto mb-0 mt-4 gap-6"
-  >
-    <figure class="hero-image flex flex-col items-center justify-center">
-      <img src={image} alt={name} />
-    </figure>
-
-    <div class="hero-info flex flex-col gap-2">
+  <article class="hero-section flex flex-row items-center justify-between">
+    <div class="hero-info flex flex-col gap-2  w-[70%]">
       <h1 class="title">
         {name}
       </h1>
-
       <h2 class="subtitle">
         {label}
       </h2>
-
-      <span class="ubicacion flex items-center gap-2 ">
+      <span class="ubicacion flex items-center gap-2">
         <WorldMap />
         {city}, {region}
       </span>
-
       <footer class="print">
         {printInfo}
       </footer>
-
       <footer class="no-print">
         {
           email && (
@@ -123,35 +113,40 @@ const printInfo = [
         }
       </footer>
     </div>
+    <figure class="hero-image flex flex-col items-center justify-center w-[30%]">
+      <img src={image} alt={name} />
+    </figure>
   </article>
 </Section>
 
 <style>
   .hero-section {
     font-family: var(--font-heading);
-    color: rgb(var(--light), 1);
+    color: rgb(var(--dark), 1);
     max-width: 700px;
   }
   .hero-image {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 140px;
+    width: 175px;
   }
   .title {
-    font-size: clamp(24px, 2.5vw, 40px);
+    font-size: clamp(24px, 2.5vw, 32px);
     font-weight: 800;
-    letter-spacing: -0.025em;
-    line-height: .85;
+    letter-spacing: -0.05em;
+    line-height: 1.2;
   }
   .subtitle {
-    font-weight: 100;
-    font-size: clamp(16px, 1.5vw, 18px);
-    letter-spacing: 0.025em;
+    font-weight: 300;
+    font-size: clamp(16px, 2.5vw, 18px);
+    letter-spacing: -0.025em;
+    text-wrap: pretty;
   }
   .ubicacion {
-    color: rgb(var(--light), 0.35);
-    font-weight: 300;
+    color: rgb(var(--dark), 0.45);
+    font-weight: 400;
     font-size: 12px;
+    font-family: var(--font-body);
   }
   footer {
     display: flex;
@@ -159,11 +154,11 @@ const printInfo = [
     font-size: 10px;
   }
   footer a {
-    color: rgb(var(--light), 0.8);
+    color: rgb(var(--dark), 0.8);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(var(--light), 0.1);
+    border: 1px solid rgb(var(--dark), 0.1);
     border-radius: 6px;
     padding: 4px;
     height: 2rem;
@@ -175,15 +170,14 @@ const printInfo = [
     border: 1px solid rgb(var(--accent-50), 0.08);
     color: rgb(var(--accent-50));
   }
-  
+
   @media (width <= 43.75rem) {
     .hero-section {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
     .hero-info {
       text-align: center;
       place-items: center;
     }
-    
   }
 </style>

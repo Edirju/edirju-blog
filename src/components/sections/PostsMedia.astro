@@ -35,28 +35,24 @@ const posts = (await getCollection("blog")).sort(
 
 <Section>
   <div class="area_section flex flex-col gap-2">
-    <h2
-      class="section-title flex items-center gap-1 text-pretty mb-4 font-medium text-xl underline underline-offset-4"
-    >
-      <Rss class="w-4 h-4" />Social Media Posts
+    <h2 class="section-title">
+      <News2 />Blog | Social Media posts
     </h2>
-    <ul>
+    <p class="parrafo">
+      Escribo sobre cualquier cosa relacionada con la tecnología, el marketing y
+      de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
+    </p>
+    <ul class="social_post">
       {
         posteos.map(({ network, title, description, url, date }) => {
-          const Icon = SOCIAL_ICONS[network];
           return (
-            <li class="p-4 rounded-md">
-              <a href={url} class="flex flex-col gap-1">
-                <p class="date flex items-center gap-2 text-pretty">
-                  <Icon class="w-4 h-4" />
-                  {date}
-                </p>
-                <h3 class="title text-pretty">
-                  {title}
-                </h3>
-                <p class="description text-pretty">
-                  {description}
-                </p>
+            <li>
+              <a href={url} class="posts flex items-center" target="_blank">
+                <Rss class="w-4 h-4" />
+                <div class="noticias">
+                  <h3 class="title">{title}</h3>
+                  <p class="date">{network}</p>
+                </div>
               </a>
             </li>
           );
@@ -68,40 +64,56 @@ const posts = (await getCollection("blog")).sort(
 
 <style>
   .area_section {
-    background: rgb(var(--light), 0.85);
-    color: rgb(var(--dark), 0.85);
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     padding: 1rem;
+    color: rgb(var(--dark), 0.9);
+    border-radius: 0.5rem;
   }
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: .5rem;
+  .section-title {
+    font-size: clamp(18px, 1.5vw, 20px);
+    font-weight: 700;
+    text-wrap: pretty;
+    letter-spacing: -0.025rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
-  li {
-    transition: all 0.3s ease-in-out;
-    border: 1px solid rgb(var(--accent-50), 0.25);
-  }
-  li:hover {
-    background-color: rgb(var(--accent-50), 0.05);
-  }
-  .date {
-    font-size: 10px;
-    color: rgb(var(--accent-60), 0.45);
+  .parrafo {
     font-family: var(--font-body);
+    font-size: 12px;
+    color: rgb(var(--dark), 0.65);
+    font-weight: 300;
+  }
+  .social_post {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .posts {
+    display: flex;
+    align-content: center;
+    gap: 0.5rem;
+    border-radius: 8px;
+    padding: 4px 8px;
+    width: 100%;
+  }
+  .posts:hover {
+    background-color: rgb(var(--accent-50), 0.8);
+    color: rgb(var(--dark), 0.9);
+  }
+  .noticias {
+    border-left: 1px solid rgb(var(--dark), 0.15);
+    padding-left: 8px;
   }
   .title {
-    font-size: clamp(13px, 1.5vw, 14px);
-    font-weight: 500;
-    color: rgb(var(--dark), 0.8);
+    font-size: 14px;
+    font-weight: 600;
   }
-  .description {
+  .date {
     font-size: 12px;
+    font-weight: 300;
     font-family: var(--font-body);
-    color: rgb(var(--dark), 0.5);
-  }
-
-  @media (width <= 700px) {
-  }
+  }  
 </style>

@@ -17,7 +17,7 @@ const isActive = href === pathname || href === "/" + subpath?.[0];
     align-items: center;
     gap: 0.25rem;
     text-decoration: none;
-    color: rgb(var(--light), 0.85);
+    color: rgb(var(--dark), 1);
     letter-spacing: 0.05em;
     transition: color 0.3s ease-in-out;
   }
@@ -26,8 +26,8 @@ const isActive = href === pathname || href === "/" + subpath?.[0];
     text-shadow: 0 0 0.5rem rgb(var(--accent-50), 0.25);
   }
   a.active {
-    font-weight: 300;
+    /* font-weight: 300; */
     text-decoration: underline;
-    text-underline-offset: 6px;
+    text-underline-offset: 4px;
   }
 </style>

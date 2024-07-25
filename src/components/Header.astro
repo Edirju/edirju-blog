@@ -4,9 +4,82 @@ import HeaderLink from "./HeaderLink.astro";
 import Logo from "../icons/Logo.astro";
 import Data from "@/icons/Data.astro";
 import News from "@/icons/News.astro";
+import UserPin from "@/icons/User-pin.astro";
+import {
+  Github,
+  Linkedin,
+  Instagram,
+  Threads,
+  X,
+  Facebook,
+} from "simple-icons-astro";
 ---
 
 <Section>
+  <header class="body-font">
+    <div
+      class="container mx-auto flex flex-wrap py-5 flex-col md:flex-row items-center"
+    >
+      <a
+        class="logo flex title-font font-medium items-center mb-4 md:mb-0"
+        href="/"
+        
+      >
+        <Logo />
+        <span class="ml-2 text-2xl font-bold tracking-tighter"
+          >edirju<span class="text-[#00D8FF]">dev</span>.</span
+        >
+      </a>
+
+      <nav
+        class="md:mr-auto md:ml-2 md:py-1 md:pl-2 md:border-l md:border-gray-400 flex flex-wrap items-center text-sm uppercase justify-center gap-4"
+      >
+        <HeaderLink href="/blog"><News />BlogPosts</HeaderLink>
+        <HeaderLink href="/projects"><Data />Proyectos</HeaderLink>
+        <!-- <HeaderLink href="/resume" target="_blank"><UserPin />Resume</HeaderLink> -->
+        
+      </nav>
+      <div
+        class="social-links inline-flex items-center gap-2 border-0 py-1 px-3 rounded text-base mt-4 md:mt-0"
+      >
+        <a
+          href="https://www.linkedin.com/in/edinson-rivera-jurado-65187927/"
+          target="_blank"
+          title="Ir a perfil de Linkedin"
+          class="hover:text-[#00D8FF]"
+        >
+          <Linkedin class="w-5 h-5" />
+        </a>
+        <a href="https://github.com/Edirju" target="_blank">
+          <span class="sr-only">Go to Astro's GitHub repo</span>
+          <Github class="w-5 h-5" />
+        </a>              
+      </div>
+    </div>
+  </header>
+</Section>
+
+<style>
+  header {
+    font-family: var(--font-heading);
+    color: rgb(var(--dark), 1);
+  }
+  .logo {
+    color: rgb(var(--dark), 0.9);
+  }
+  .logo:hover {
+    text-shadow: 0 0 0.5rem rgb(var(--accent-50), 0.25);
+  }
+  .social-links a {
+    color: rgb(var(--dark), 0.8);
+    transition: all 0.3s ease-in-out;
+  }
+  .social-links a:hover {
+    color: rgb(var(--accent-50), 0.9);
+  }
+</style>
+
+<!-- <Section>
   <header class="header" transition:animate="slide">
     <div
       class="container flex items-center justify-between py-4 md:flex-row flex-col mx-auto"
@@ -28,20 +101,20 @@ import News from "@/icons/News.astro";
       </nav>
     </div>
   </header>
-</Section>
+</Section> -->
 
-<style>
+<!-- <style>
   .header {
     font-family: var(--font-heading);
-    color: rgb(var(--light), 1);
+    color: rgb(var(--dark), 1);
   }
   .container {
-    border-bottom: 1px solid rgb(var(--light), 0.1);
+    border-bottom: 1px solid rgb(var(--dark), 0.1);
   }
   .logo {
-    color: rgb(var(--light), 0.9);
+    color: rgb(var(--dark), 0.9);
   }
   .logo:hover {
     text-shadow: 0 0 .5rem rgb(var(--accent-50), 0.15);
   }  
-</style>
+</style> -->

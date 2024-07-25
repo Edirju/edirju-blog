@@ -1,7 +1,6 @@
 ---
 import Section from "../Section.astro";
 import { skills } from "@landing";
-
 import {
   Bootstrap,
   Css3,
@@ -151,7 +150,7 @@ const SKILLS_ICONS: Record<string, any> = {
 
 <style>
   .area_section {
-    color: rgb(var(--light), 0.9);
+    color: rgb(var(--dark), 0.9);
     border-radius: 10px;
     padding: 1rem;
   }
@@ -159,10 +158,13 @@ const SKILLS_ICONS: Record<string, any> = {
     font-size: clamp(18px, 1.5vw, 20px);
   }
   .parrafo {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 12px;
-    color: rgb(var(--light), 0.55);
+    color: rgb(var(--dark), 0.55);
     font-weight: 100;
+    border: 1px solid rgb(var(--dark), 0.05);
+    padding: 4px;
+    border-radius: 6px;
   }
   ul {
     display: grid;
@@ -170,13 +172,13 @@ const SKILLS_ICONS: Record<string, any> = {
     gap: 1.5rem;
   }
   article {
-    background: rgb(var(--accent-60), 0.25);
+    background: rgb(var(--light), 0.25);
     padding: 0.5rem;
     border-radius: 0.5rem;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    border: 1px solid rgb(var(--light), 0.1);
+
+    border: 1px solid rgb(var(--dark), 0.1);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -185,8 +187,9 @@ const SKILLS_ICONS: Record<string, any> = {
     transition: all 0.2s ease-in-out;
   }
   article:hover {
-    background-color: rgb(var(--accent-60), 0.5);
+    background-color: rgb(var(--accent-50), 0.03);
     box-shadow: var(--box-shadow);
+    border: 1px solid rgb(var(--accent-50), 0.2);
   }
   .title {
     display: flex;
@@ -199,9 +202,9 @@ const SKILLS_ICONS: Record<string, any> = {
     text-transform: uppercase;
   }
   .description {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 12px;
-    color: rgb(var(--light), 0.5);
+    color: rgb(var(--dark), 0.5);
   }
   footer ul {
     display: inline-flex;
@@ -215,29 +218,9 @@ const SKILLS_ICONS: Record<string, any> = {
     font-family: var(--font-body);
     font-size: 9px;
     text-transform: uppercase;
-    color: rgb(var(--light), 0.65);
-    background-color: rgb(var(--accent-50), 0.25);
+    color: rgb(var(--dark), 0.85);
+    background-color: rgb(var(--dark), 0.05);
     padding: 4px;
     border-radius: 2px;
   }
-  /* ul {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  li {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 11px;
-    text-transform: uppercase;
-    background-color: rgb(var(--black), 0.05);
-    color: var(--text-200);
-    padding: 4px;
-    transition: all 0.2s ease-in-out;
-  }
-  li:hover {
-    background-color: rgb(var(--text-200), 0.9);
-    color: rgb(var(--text-400), 0.9);
-  } */
 </style>

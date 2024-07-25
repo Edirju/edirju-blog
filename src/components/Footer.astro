@@ -33,6 +33,7 @@ import { FOOTER } from "../consts";
         </h3>
       </div>
       <p>&copy; {today.getFullYear()} {FOOTER.alias}. {FOOTER.texto}</p>
+
       <div class="social-links">
         <a
           href="https://www.linkedin.com/in/edinson-rivera-jurado-65187927/"
@@ -72,7 +73,7 @@ import { FOOTER } from "../consts";
 
 <style>
   .area_section {
-    color: rgb(var(--light), 0.9);
+    color: rgb(var(--dark), 0.9);
     border-radius: 10px;
     padding: 1rem;
   }
@@ -87,11 +88,11 @@ import { FOOTER } from "../consts";
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: -0.025em;
-    color: rgb(var(--light), 0.8);
+    color: rgb(var(--dark), 0.8);
   }
   p {
-    color: rgb(var(--light), 0.4);
-    font-size: 0.875rem;
+    color: rgb(var(--dark), 0.4);
+    font-size: 14px;
   }
   .social-links {
     display: flex;
@@ -101,13 +102,13 @@ import { FOOTER } from "../consts";
   }
   .social-links a {
     text-decoration: none;
-    color: rgb(var(--light), 0.75);
+    color: rgb(var(--dark), 0.75);
     transition-property: transform, color;
     transition-duration: 0.3s, 0.5s;
     transition-delay: 0s, 0.1s;
   }
   .social-links a:hover {
-    color: rgb(var(--accent-50), 1);
+    color: rgb(var(--accent-50), .9);
     transform: scale(1.2) rotate(360deg);
   }
 </style>
